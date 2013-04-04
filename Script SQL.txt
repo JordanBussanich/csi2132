@@ -54,12 +54,12 @@ CREATE TABLE Purchase(
 	InvoiceNumber Integer NOT NULL,
 	MemberNumber Integer,
 	VideoID Integer,
+	VideoID2 Integer,
 	date_ordered DATE,
 	date_shipped DATE,
 	shipping_cost FLOAT,
 	speed VARCHAR,
 	carrier VARCHAR,
-	ReturnVid Boolean,
 	Primary key (InvoiceNumber),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
 	On delete restrict
@@ -68,6 +68,21 @@ CREATE TABLE Purchase(
 	On delete restrict
 	On update cascade);
 
+CREATE TABLE Returns(
+	InvoiceNumber Integer,
+	MemberNumber Integer,
+	VideoID Integer,
+	Negative_sales Numeric(8,2),
+	Primary key(InvoiceNumber, VideoID),
+	Foreign key (InvoiceNumber) references Purchase
+	On delete restrict
+	On update cascade,
+	Foreign key(VideoID) references video
+	On delete restrict
+	On update cascade,
+	Foreign key(MemberNumber) references Member
+	On delete restrict
+	On update cascade);
 	
 CREATE TABLE Download(
 	MemberNumber Integer,
@@ -93,7 +108,9 @@ CREATE TABLE Video(
 	DirectorID Integer,
 	Year VARCHAR,
 	Duration Integer,
-	ActorID Integer,
+	ActorID Integer UNIQUE NOT NULL,
+	ActorID2 Integer,
+	ActorID3 Integer,
 	PRIMARY KEY (VideoID),
 	FOREIGN KEY(DirectorID) REFERENCES Director
 	On update cascade
@@ -111,7 +128,7 @@ CREATE TABLE Director(
 
 CREATE TABLE Award(
 	AwardID Integer NOT NULL,
-	Year TIMESTAMP(4),
+	Year VARCHAR,
 	Description VARCHAR,
 	Category VARCHAR,
 	PRIMARY KEY(AwardID, Year));
@@ -119,7 +136,7 @@ CREATE TABLE Award(
 CREATE TABLE VideoAwards(
 	VideoID Integer,
 	AwardID Integer,
-	Year TIMESTAMP(4),
+	Year VARCHAR,
 	Won Boolean,
 	PRIMARY KEY(VideoID, AwardID, Year),
 	FOREIGN KEY (VideoID) REFERENCES Video
