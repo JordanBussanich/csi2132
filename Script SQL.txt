@@ -1,0 +1,288 @@
+set search_path = 'projectcsi2132'
+
+CREATE TABLE Member (
+	MemberNumber Integer NOT NULL,
+	Lastname VARCHAR,
+	Firstname VARCHAR,
+	email VARCHAR,
+	password VARCHAR,
+	PRIMARY KEY(MemberNumber));
+	
+
+CREATE TABLE BilingInformation (
+	MemberNumber Integer NOT NULL,
+	CardNumber Integer,
+	Type VARCHAR,
+	PRIMARY KEY(MemberNumber),
+	FOREIGN KEY(CardNumber) REFERENCES Card
+	On delete restrict
+	on update cascade);
+
+CREATE TABLE Card(
+	CardNumber Integer NOT NULL,
+	ExpDate Date,
+	Name VARCHAR,
+	PRIMARY KEY(CardNumber));
+
+CREATE TABLE BilingAddress(
+	BAddresID Integer NOT NULL,
+	MemberNumber Integer,
+	address1 VARCHAR,
+	address2 VARCHAR,
+	city VARCHAR,
+	phone VARCHAR,
+	postalcode VARCHAR,
+	PRIMARY KEY(BAddresID),
+	FOREIGN KEY (MemberNumber) REFERENCES Member
+	On update cascade
+	on delete restrict);
+
+CREATE TABLE ShippingAddress(
+	SAddresID Integer NOT NULL,
+	MemberNumber Integer,
+	address1 VARCHAR,
+	address2 VARCHAR,
+	city VARCHAR,
+	phone VARCHAR,
+	postalcode VARCHAR,
+	PRIMARY KEY(SAddresID),
+	FOREIGN KEY (MemberNumber) REFERENCES Member
+	On update cascade
+	On delete restrict);
+
+CREATE TABLE Purchase(
+	InvoiceNumber Integer NOT NULL,
+	MemberNumber Integer,
+	VideoID Integer,
+	date_ordered DATE,
+	date_shipped DATE,
+	shipping_cost FLOAT,
+	speed VARCHAR,
+	carrier VARCHAR,
+	ReturnVid Boolean,
+	Primary key (InvoiceNumber),
+	FOREIGN KEY (MemberNumber) REFERENCES Member
+	On delete restrict
+	On update cascade,
+	FOREIGN KEY (VideoID) REFERENCES Video
+	On delete restrict
+	On update cascade);
+
+	
+CREATE TABLE Download(
+	MemberNumber Integer,
+	VideoID Integer,
+	Date DATE,
+	Time TIME,
+	Fee FLOAT,
+	PRIMARY KEY(MemberNumber, VideoID),
+	FOREIGN KEY(VideoID) REFERENCES Video
+	On delete restrict
+	On update cascade,
+	FOREIGN KEY(MemberNumber) REFERENCES Member
+	On delete restrict
+	On update cascade);
+
+CREATE TABLE Video(
+	VideoID INTEGER UNIQUE NOT NULL,
+	Name VARCHAR,
+	Salesprice NUMERIC (8,2),
+	Genre Varchar,
+	Rating VARCHAR,
+	InStock Boolean,
+	DirectorID Integer,
+	Year VARCHAR,
+	Duration Integer,
+	ActorID Integer,
+	PRIMARY KEY (VideoID),
+	FOREIGN KEY(DirectorID) REFERENCES Director
+	On update cascade
+	On delete restrict,
+	Foreign key(ActorID) REFERENCES Actor
+	On Update cascade
+	On delete restrict);
+
+CREATE TABLE Director(
+	DirectorID Integer NOT NULL,
+	Lastname VARCHAR,
+	Firstname VARCHAR,
+	Date_of_birth DATE,
+	PRIMARY KEY(DirectorID));
+
+CREATE TABLE Award(
+	AwardID Integer NOT NULL,
+	Year TIMESTAMP(4),
+	Description VARCHAR,
+	Category VARCHAR,
+	PRIMARY KEY(AwardID, Year));
+
+CREATE TABLE VideoAwards(
+	VideoID Integer,
+	AwardID Integer,
+	Year TIMESTAMP(4),
+	Won Boolean,
+	PRIMARY KEY(VideoID, AwardID, Year),
+	FOREIGN KEY (VideoID) REFERENCES Video
+	On delete restrict
+	On update cascade,
+	FOREIGN KEY(AwardID, YEAR) REFERENCES Award
+	On delete restrict
+	On update cascade);
+
+CREATE TABLE Actor(
+	ActorID Integer,
+	Lastname VARCHAR,
+	Firstname VARCHAR,
+	Date_of_birth DATE,
+	IMdB_link TEXT,
+	PRIMARY KEY (ActorID));
+
+CREATE TABLE VideoStar(
+	VideoID Integer,
+	ActorID Integer,
+	Rolename VARCHAR,
+	FOREIGN KEY(VideoID) REFERENCES Video
+	On delete restrict
+	On update cascade,
+	FOREIGN KEY(ActorID) REFERENCES Actor
+	On delete restrict
+	On update cascade);
+
+	
+insert into member values (10001, 'Chuck', 'Ravary', 'chuckster@gmail.com', 'hello123');
+insert into member values (10002, 'Gerald', 'Meunier', 'cheeboi@gmail.com', 'retroboi22');
+insert into member values (10003, 'Paul', 'Buisson', 'biglpce@gmail.com', 'leet1337');
+insert into member values (10004, 'Susan', 'Bigelow', 'Sussiiea@gmail.com', 'abc123a');
+insert into member values (10005, 'Ann', 'Bigras', 'saucea@gmail.com', 'freakema');
+insert into member values (10006, 'Joe', 'Petitroux', 'hockeylova@gmail.com', 'hockeyfan12');
+insert into member values (10007, 'Nick', 'Douglas', 'maneaua@gmail.com', 'iloveabc6');
+insert into member values (10008, 'Mohammed', 'Mickleson', 'screene@gmail.com', 'mouse3123');
+insert into member values (10009, 'Sarah', 'Woods', 'ilovetoscream@gmail.com', 'cordonbleu1');
+insert into member values (10010, 'Veronique', 'Seguin', 'paperaf@gmail.com', 'soiwaslikechee');
+insert into member values (10011, 'Vanessa', 'Chara', 'sauce123@gmail.com', 'hotbbqsauce');
+insert into member values (10012, 'Tatianna', 'Pleakanec', 'habslova@gmail.com', 'stanleycupwinner');
+insert into member values (10013, 'Alexandre', 'Desharnais', 'heyijustmetyou@gmail.com', 'andthisiscrazy');
+insert into member values (10014, 'Alexander', 'Kovalev', 'heresmynumber@gmail.com', 'callmemaybe');
+insert into member values (10015, 'Guillaume', 'Koivu', 'beforeyoucame@gmail.com', 'intomylife');
+insert into member values (10016, 'Antoine', 'Gionta', 'imissedyou@gmail.com', 'sosobad');
+insert into member values (10017, 'Lebron', 'Bergeron', 'youtookmylife@gmail.com', 'butilltakeyourstoo');
+insert into member values (10018, 'James', 'Rask', 'youbettabewatchin@gmail.com', 'causeillcomethrough');
+insert into member values (10019, 'Cedric', 'Marchand', 'bruinsalldaway@gmail.com', 'ilovechara12');
+insert into member values (10020, 'Stacy', 'Bourque', 'smellslikevictory@gmail.com', 'cheeboi1235');
+insert into member values (10021, 'Katrina', 'Peverley', 'lesrounesdebwoi@gmail.com', 'jaimelepoulet');
+insert into member values (10022, 'Sue', 'Jagr', 'ikindaforgot@gmail.com', 'whatiate');
+insert into member values (10023, 'Kat', 'DeLuna', 'fordinnerlast@gmail.com', 'night897');
+insert into member values (10024, 'Jesse', 'Moutier', 'ineedtobegetting@gmail.com', 'onmyway974');
+insert into member values (10025, 'Mathieu', 'Champagne', 'becauseiammillions@gmail.com', 'milesaway32');
+insert into member values (10026, 'Nicolas', 'Leroux', 'fromyoutoacheive@gmail.com', 'butillbethereforyou1234');
+insert into member values (10027, 'Pascal', 'Dupuis', 'icantake@gmail.com', 'dell125');
+insert into member values (10028, 'Candy', 'Lebrun', 'idontlikealienware@gmail.com', 'hopeyouagreewithme65');
+insert into member values (10029, 'Noemie', 'Schmidel', 'ihavenomore@gmail.com', 'ideastoputfor');
+insert into member values (10030, 'Joey', 'Larocque', 'thisdatabase@gmail.com', 'fillingallmyimagination');
+
+insert into director values(101, 'Spielberg', 'Steven', '1946-12-18');
+insert into actor values(101, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st'); 
+insert into video values (000001, 'Jurassic Park', 19.99, 'Sci-fi', '8.0', true, 101, '1993', 127, 101);
+
+insert into director values(102, 'Fincher', 'David', '1962-08-28');
+insert into actor values(102, 'Pitt', 'Brad', '1963-12-18', 'http://www.imdb.com/name/nm0000093/?ref_=tt_ov_st'); 
+insert into video values (000002, 'Fight Club', 14.99, 'Drama', '8.9', true, 102, '1999', 139, 102);
+
+insert into director values(103, 'Osborne', 'Mark', '1970-09-17');
+insert into actor values(103, 'Black', 'Jack', '1969-08-28', 'http://www.imdb.com/name/nm0085312/?ref_=tt_ov_st'); 
+insert into video values (000003, 'Kung Fu Panda', 14.99, 'Adventure', '7.6', true, 103, '1999', 139, 103);
+
+insert into director values(104, 'Saldanha', 'Carlos', '1968-07-20');
+insert into actor values(104, 'Romano', 'Ray', '1957-12-21', 'http://www.imdb.com/name/nm0005380/?ref_=tt_ov_st'); 
+insert into video values (000004, 'Ice Age: Dawn of the Dinosaurs', 12.99, 'Adventure', '7.6', true, 104, '2009', 94, 104);
+
+insert into director values(105, 'Cameron', 'James', '1954-08-16');
+insert into actor values(105, 'DiCaprio', 'Leonardo', '1974-11-11', 'http://www.imdb.com/name/nm0000138/?ref_=tt_ov_st'); 
+insert into video values (000005, 'Titanic', 11.99, 'Romance', '7.6', true, 105, '1997', 194, 105);
+
+insert into director values(106, 'Whedon', 'Joss', '1964-06-23');
+insert into actor values(106, 'Downey Jr.', 'Robert', '1965-04-04', 'http://www.imdb.com/name/nm0000375/?ref_=tt_ov_st'); 
+insert into video values (000006, 'The Avengers', 16.99, 'Action', '8.3', true, 106, '2012', 143, 106);
+
+insert into director values(107, 'Mottola', 'Greg', '1964-07-11');
+insert into actor values(107, 'Rogan', 'Seth', '1982-04-15', 'http://www.imdb.com/name/nm0736622/?ref_=tt_ov_st'); 
+insert into video values (000007, 'Superbad', 16.99, 'Comedy', '7.6', true, 107, '2007', 113, 107);
+
+insert into director values(108, 'McKay', 'Adam', '1968-04-17');
+insert into actor values(108, 'Ferrell', 'Will', '1967-07-16', 'http://www.imdb.com/name/nm0002071/?ref_=tt_ov_wr'); 
+insert into video values (000008, 'Step Brothers', 14.99, 'Comedy', '6.7', true, 108, '2008', 98, 108);
+
+insert into director values(109, 'MacFarlane', 'Seth', '1973-10-26');
+insert into actor values(109, 'Wahlberg', 'Mark', '1971-06-05', 'http://www.imdb.com/name/nm0000242/?ref_=tt_ov_st'); 
+insert into video values (000009, 'Ted', 14.99, 'Comedy', '7.1', true, 109, '2012', 109, 109);
+
+insert into director values(110, 'Scorsese', 'Martin', '1942-11-17');
+insert into actor values(110, 'Damon', 'Matt', '1970-10-08', 'http://www.imdb.com/name/nm0000354/?ref_=tt_ov_st'); 
+insert into video values (000010, 'The Departed', 14.99, 'Thriller', '8.5', true, 110, '2006', 151, 110);
+
+insert into director values(111, 'Darabont', 'Frank', '1959-01-28');
+insert into actor values(111, 'Hanks', 'Tom', '1956-07-09', 'http://www.imdb.com/name/nm0000158/?ref_=tt_ov_st'); 
+insert into video values (000011, 'The Green Mile', 19.99, 'Drama', '8.5', true, 111, '1999', 189, 111);
+
+insert into director values(112, 'Nolan', 'Christopher', '1970-07-30');
+insert into actor values(112, 'Bale', 'Christian', '1974-01-30', 'http://www.imdb.com/name/nm0000288/?ref_=tt_ov_st'); 
+insert into video values (000012, 'The Prestige', 14.99, 'Drama', '8.5', true, 112, '2006', 130, 112);
+
+insert into director values(113, 'Mangold', 'James', '1963-12-16');
+insert into actor values(113, 'Cusack', 'John', '1966-06-28', 'http://www.imdb.com/name/nm0000131/?ref_=tt_ov_st'); 
+insert into video values (000013, 'Identity', 14.99, 'Thriller', '7.2', true, 113, '2003', 90, 113);
+
+insert into director values(114, 'Burger', 'Neil', '1968-03-22');
+insert into actor values(114, 'Norton', 'Edward', '1969-08-18', 'http://www.imdb.com/name/nm0001570/?ref_=tt_ov_st'); 
+insert into video values (000014, 'The Illusionist', 12.99, 'Romance', '7.6', true, 114, '2006', 110, 114);
+
+insert into director values(115, 'Meirelles', 'Fernando', '1955-11-09');
+insert into actor values(115, 'Fiennes', 'Ralph', '1962-12-22', 'http://www.imdb.com/name/nm0000146/?ref_=tt_ov_st'); 
+insert into video values (000015, 'The constant Gardener', 11.99, 'Thriller', '7.5', true, 115, '1997', 129, 115);
+
+insert into director values(116, 'McGuigan', 'Paul', '1963-09-19');
+insert into actor values(116, 'Harnett', 'Josh', '1978-07-21', 'http://www.imdb.com/name/nm0001326/?ref_=tt_ov_st'); 
+insert into video values (000016, 'Wicker Park', 12.99, 'Romance', '6.8', true, 116, '2004', 123, 116);
+
+insert into director values(117, 'Cristofer', 'Michael', '1945-01-22');
+insert into actor values(117, 'Banderas', 'Antonio', '1960-08-10', 'http://www.imdb.com/name/nm0000104/?ref_=tt_ov_st'); 
+insert into video values (000017, 'Original Sin', 11.99, 'Drama', '5.8', true, 117, '2001', 103, 117);
+
+insert into actor values(118, 'Pearce', 'Guy', '1967-10-05', 'http://www.imdb.com/name/nm0001602/?ref_=tt_ov_st'); 
+insert into video values (000018, 'Memento', 14.99, 'Thriller', '8.6', true, 112, '2000', 11, 118);
+
+insert into video values (000019, 'Saving Private Ryan', 14.99, 'Drama', '8.6', true, 101, '1998', 169, 111);
+
+insert into video values (000020, 'Inception', 14.99, 'Adventure', '8.8', true, 112, '2010', 148, 105);
+
+insert into actor values(119, 'Sigourney', 'Weaver', '1949-10-08', 'http://www.imdb.com/name/nm0000244/?ref_=tt_ov_st'); 
+insert into video values (000021, 'Alien', 9.99, 'Sci-fi', '8.5', true, 101, '1979', 127, 119);
+
+insert into actor values(120, 'Freeman', 'Morgan', '1937-06-01', 'http://www.imdb.com/name/nm0000151/?ref_=tt_ov_st'); 
+insert into video values (000022, 'The Shawshank Redemption', 14.99, 'Drama', '9.3', true, 111, '1994', 142, 120);
+
+insert into director values(118, 'Carpenter', 'John', '1948-01-16');
+insert into actor values(121, 'Russell', 'Kurt', '1951-03-17', 'http://www.imdb.com/name/nm0000621/?ref_=tt_ov_st'); 
+insert into video values (000023, 'The Thing', 14.99, 'Sci-fi', '8.2', true, 118, '1982', 109, 121);
+
+insert into director values(119, 'Penn', 'Sean', '1960-08-17');
+insert into actor values(122, 'Hirsch', 'Emile', '1985-03-13', 'http://www.imdb.com/name/nm0386472/?ref_=tt_ov_st'); 
+insert into video values (000024, 'Into the Wild', 12.99, 'Adventure', '8.2', true, 119, '2007', 148, 122);
+
+insert into director values(120, 'Eastwood', 'Clint', '1930-05-31');
+insert into actor values(123, 'Swank', 'Hilary', '1974-07-30', 'http://www.imdb.com/name/nm0005476/?ref_=tt_ov_st'); 
+insert into video values (000025, 'Million Dollar Baby', 11.99, 'Drama', '8.1', true, 120, '2004', 132, 123);
+
+insert into actor values(124, 'Eastwood', 'Clint', '1930-05-31', 'http://www.imdb.com/name/nm0000142/?ref_=tt_ov_st'); 
+insert into video values (000026, 'Gran Torino', 16.99, 'Drama', '8.2', true, 120, '2008', 116, 124);
+
+insert into video values (000027, 'Unforgiven', 12.99, 'Western', '8.3', true, 120, '1992', 131, 124);
+
+insert into video values (000028, 'Se7en', 12.99, 'Thriller', '8.7', true, 102, '1995', 127, 120);
+
+insert into director values(121, 'Hanson', 'Curtis', '1945-03-24');
+insert into actor values(125, 'Spacey', 'Kevin', '1959-07-26', 'http://www.imdb.com/name/nm0000228/?ref_=tt_ov_st'); 
+insert into video values (000029, 'L.A. Confidential', 14.99, 'Drama', '8.4', true, 121, '1997', 138, 125);
+
+insert into actor values(126, 'Bacon', 'Kevin', '1958-07-08', 'http://www.imdb.com/name/nm0000102/?ref_=tt_ov_st'); 
+insert into video values (000030, 'Mystic River', 12.99, 'Drama', '8.0', true, 120, '2003', 138, 126);
