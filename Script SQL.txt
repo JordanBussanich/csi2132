@@ -413,26 +413,61 @@ insert into videostar values(000023, 1062, 'Dr. Blair');
 insert into videostar values(000023, 1063, 'Palmer');
 
 insert into director values(119, 'Penn', 'Sean', '1960-08-17');
-insert into actor values(122, 'Hirsch', 'Emile', '1985-03-13', 'http://www.imdb.com/name/nm0386472/?ref_=tt_ov_st'); 
-insert into video values (000024, 'Into the Wild', 12.99, 'Adventure', '8.2', true, 119, '2007', 148, 122);
+insert into actor values(1064, 'Hirsch', 'Emile', '1985-03-13', 'http://www.imdb.com/name/nm0386472/?ref_=tt_ov_st'); 
+insert into actor values(1065, 'Vaughn', 'Vince', '1970-03-28', 'http://www.imdb.com/name/nm0000681/?ref_=tt_ov_st'); 
+insert into actor values(1066, 'Keener', 'Catherine', '1959-03-23', 'http://www.imdb.com/name/nm0001416/?ref_=tt_ov_st'); 
+insert into video values (000024, 'Into the Wild', 12.99, 'Adventure', '8.2', true, 119, '2007', 148);
+
+insert into videostar values(000024, 1064, 'Chris McCandless');
+insert into videostar values(000024, 1065, 'Wayne Westerberg');
+insert into videostar values(000024, 1066, 'Jan Burres');
 
 insert into director values(120, 'Eastwood', 'Clint', '1930-05-31');
-insert into actor values(123, 'Swank', 'Hilary', '1974-07-30', 'http://www.imdb.com/name/nm0005476/?ref_=tt_ov_st'); 
-insert into video values (000025, 'Million Dollar Baby', 11.99, 'Drama', '8.1', true, 120, '2004', 132, 123);
+insert into actor values(1067, 'Swank', 'Hilary', '1974-07-30', 'http://www.imdb.com/name/nm0005476/?ref_=tt_ov_st'); 
+insert into actor values(1068, 'Eastwood', 'Clint', '1930-05-31', 'http://www.imdb.com/name/nm0000142/?ref_=tt_ov_st'); 
+insert into video values (000025, 'Million Dollar Baby', 11.99, 'Drama', '8.1', true, 120, '2004', 132);
 
-insert into actor values(124, 'Eastwood', 'Clint', '1930-05-31', 'http://www.imdb.com/name/nm0000142/?ref_=tt_ov_st'); 
-insert into video values (000026, 'Gran Torino', 16.99, 'Drama', '8.2', true, 120, '2008', 116, 124);
+insert into videostar values(000025, 1067, 'Maggie Fitzgerald');
+insert into videostar values(000025, 1068, 'Frankie Dunn');
+insert into videostar values(000025, 1058, 'Eddie Dupris');
 
-insert into video values (000027, 'Unforgiven', 12.99, 'Western', '8.3', true, 120, '1992', 131, 124);
+insert into actor values(1069, 'Vang', 'Bee', '1991-11-04', 'http://www.imdb.com/name/nm3057402/?ref_=tt_ov_st'); 
+insert into actor values(1070, 'Carley', 'Christopher', '1978-05-31', 'http://www.imdb.com/name/nm1542291/?ref_=tt_ov_st'); 
+insert into video values (000026, 'Gran Torino', 16.99, 'Drama', '8.2', true, 120, '2008', 116);
 
-insert into video values (000028, 'Se7en', 12.99, 'Thriller', '8.7', true, 102, '1995', 127, 120);
+insert into videostar values(000026, 1069, 'Thao');
+insert into videostar values(000026, 1070, 'Father Janovich');
+insert into videostar values(000026, 1068, 'Walt Kowalski');
+
+insert into actor values(1071, 'Hackman', 'Gene', '1930-01-30', 'http://www.imdb.com/name/nm0000432/?ref_=tt_ov_st'); 
+insert into video values (000027, 'Unforgiven', 12.99, 'Western', '8.3', true, 120, '1992', 131);
+
+insert into videostar values(000027, 1068, 'Will Munny');
+insert into videostar values(000027, 1071, 'Bill Daggett');
+insert into videostar values(000027, 1058, 'Ned Logan');
+
+insert into actor values(1072, 'Spacey', 'Kevin', '1959-07-26', 'http://www.imdb.com/name/nm0000228/?ref_=tt_ov_st'); 
+insert into video values (000028, 'Se7en', 12.99, 'Thriller', '8.7', true, 102, '1995', 127);
+
+insert into videostar values(000028, 1072, 'David');
+insert into videostar values(000028, 1058, 'William Somerset');
+insert into videostar values(000028, 1004, 'David Mills');
 
 insert into director values(121, 'Hanson', 'Curtis', '1945-03-24');
-insert into actor values(125, 'Spacey', 'Kevin', '1959-07-26', 'http://www.imdb.com/name/nm0000228/?ref_=tt_ov_st'); 
-insert into video values (000029, 'L.A. Confidential', 14.99, 'Drama', '8.4', true, 121, '1997', 138, 125);
+insert into actor values(1073, 'Crowe', 'Russell', '1964-04-07', 'http://www.imdb.com/name/nm0000128/?ref_=tt_ov_st'); 
+insert into video values (000029, 'L.A. Confidential', 14.99, 'Drama', '8.4', true, 121, '1997', 138);
 
-insert into actor values(126, 'Bacon', 'Kevin', '1958-07-08', 'http://www.imdb.com/name/nm0000102/?ref_=tt_ov_st'); 
-insert into video values (000030, 'Mystic River', 12.99, 'Drama', '8.0', true, 120, '2003', 138, 126);
+insert into videostar values(000029, 1073, 'Wendell White');
+insert into videostar values(000029, 1049, 'Edmund Exley');
+insert into videostar values(000029, 1072, 'Jack Vincennes');
+
+insert into actor values(1074, 'Bacon', 'Kevin', '1958-07-08', 'http://www.imdb.com/name/nm0000102/?ref_=tt_ov_st'); 
+insert into actor values(1075, 'Penn', 'Sean', '1960-08-17', 'http://www.imdb.com/name/nm0000576/?ref_=tt_ov_st'); 
+insert into video values (000030, 'Mystic River', 12.99, 'Drama', '8.0', true, 120, '2003', 138);
+
+insert into videostar values(000030, 1074, 'Sean Devine');
+insert into videostar values(000030, 1075, 'Jimmy Markum');
+insert into videostar values(000030, 1059, 'Dave Boyle');
 
 insert into billingaddress values(1001, 10001, '2762 Lees', '', Ottawa, '613-677-4409', 'K1S 5L5');
 insert into shippingaddress values(1001, 10001, '2762 Lees', '', Ottawa, '613-677-4409', 'K1S 5L5');
