@@ -57,7 +57,7 @@ CREATE TABLE Purchase(
 	date_ordered DATE,
 	date_shipped DATE,
 	shipping_cost FLOAT,
-	speed VARCHAR,
+	speed Integer,
 	carrier VARCHAR,
 	Primary key (InvoiceNumber),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
@@ -76,7 +76,7 @@ CREATE TABLE Returns(
 	Foreign key (InvoiceNumber) references Purchase
 	On delete restrict
 	On update cascade,
-	Foreign key(VideoID) references video
+	Foreign key(VideoID) references Video
 	On delete restrict
 	On update cascade,
 	Foreign key(MemberNumber) references Member
@@ -399,4 +399,85 @@ insert into download values(10006, 000006, '03-08-12', '19:30', '0.00');
 insert into download values(10007, 000007, '02-09-12', '12:30', '0.00');
 insert into download values(10008, 000008, '10-09-12', '17:00', '0.00');
 
+insert into purchase values(00001, 10001, 000009,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
+insert into purchase values(00001, 10001, 000013,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
+
+insert into purchase values(00002, 10002, 000025,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
+insert into purchase values(00002, 10002, 000021,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
+
+insert into purchase values(00003, 10003, 000015,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into purchase values(00003, 10003, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+
+insert into purchase values(00004, 10004, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into purchase values(00004, 10004, 000012,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+
+insert into purchase values(00005, 10005, 000011,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
+insert into purchase values(00005, 10005, 000011,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
+
+insert into purchase values(00006, 10006, 000001,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
+insert into purchase values(00006, 10006, 000021,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
+
+insert into purchase values(00007, 10007, 000002,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+insert into purchase values(00007, 10007, 000021,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+insert into purchase values(00007, 10007, 000003,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+
+insert into purchase values(00008, 10008, 000006,  '27-03-12', '28-03-12', 6.99, 4, 'Purolator');
+
+insert into purchase values(00009, 10009, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00009, 10009, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+
+insert into purchase values(00010, 10010, 000021,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
+insert into purchase values(00010, 10010, 000005,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
+
+insert into purchase values(00011, 10011, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00011, 10011, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+
+insert into purchase values(00012, 10012, 000024,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
+insert into purchase values(00012, 10012, 000015,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
+
+insert into purchase values(00013, 10013, 000014,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00013, 10013, 000026,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
+
+insert into purchase values(000014, 10014, 000012,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
+insert into purchase values(000014, 10014, 000006,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
+
+insert into purchase values(00015, 10015, 000009,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00015, 10015, 000008,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
+
+insert into purchase values(00016, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00016, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into purchase values(00016, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00016, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into purchase values(00017, 10017, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00017, 10017, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into purchase values(00018, 10018, 000010,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
+insert into purchase values(00018, 10018, 000011,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
+
+insert into purchase values(00019, 10019, 000009,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00019, 10019, 000007,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
+
+insert into purchase values(00020, 10020, 000008,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
+insert into purchase values(00020, 10020, 000006,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
+
+insert into purchase values(00021, 10021, 000005,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
+insert into purchase values(00021, 10021, 000008,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
+
+insert into purchase values(00022, 10022, 000005,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
+insert into purchase values(00022, 10022, 000009,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
+
+insert into purchase values(00023, 10023, 000022,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
+insert into purchase values(00023, 10023, 000023,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
+
+insert into purchase values(00024, 10024, 000021,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
+insert into purchase values(00024, 10024, 000020,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
+
+insert into purchase values(00025, 10025, 000030,  '04-04-12', '05-04-12', 6.99, 1, 'UPS');
+insert into purchase values(00025, 10025, 000026,  '04-04-12', '05-04-12', 6.99, 1, 'UPS');
+
+insert into returns values(00016, 10016, 000007, 16.99);
+insert into returns values(00021, 10021, 000008, 14.99);
+insert into returns values(00024, 10024, 000021, 9.99);
 
