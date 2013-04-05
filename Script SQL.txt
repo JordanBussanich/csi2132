@@ -1,7 +1,7 @@
 set search_path = 'projectcsi2132'
 
 CREATE TABLE Member (
-	MemberNumber Integer NOT NULL,
+	MemberNumber Integer UNIQUE NOT NULL,
 	Lastname VARCHAR,
 	Firstname VARCHAR,
 	email VARCHAR,
@@ -303,3 +303,93 @@ insert into video values (000029, 'L.A. Confidential', 14.99, 'Drama', '8.4', tr
 
 insert into actor values(126, 'Bacon', 'Kevin', '1958-07-08', 'http://www.imdb.com/name/nm0000102/?ref_=tt_ov_st'); 
 insert into video values (000030, 'Mystic River', 12.99, 'Drama', '8.0', true, 120, '2003', 138, 126);
+
+insert into billingaddress values(1001, 10001, '2762 Lees', '', Ottawa, '613-677-4409', 'K1S 5L5');
+insert into shippingaddress values(1001, 10001, '2762 Lees', '', Ottawa, '613-677-4409', 'K1S 5L5');
+
+insert into billingaddress values(1002, 10002, '2762 Carlson', '', Ottawa, '613-676-8792', 'K1Y 5L5');
+insert into shippingaddress values(1002, 10002, '2762 Carlson', '', Ottawa, '613-676-8792', 'K1Y 5L5');
+
+insert into billingaddress values(1003, 10003, '212 Jackson', '', Ottawa, '613-671-9821', 'K1K 2P8');
+insert into shippingaddress values(1003, 10003, '212 Jackson', '', Ottawa, '613-671-9821', 'K1K 2P8');
+
+insert into billingaddress values(1004, 10004, '1123 Fracko', '', Ottawa, '613-678-4561', 'P1K 2P6');
+insert into shippingaddress values(1004, 10004, '1123 Fracko', '', Ottawa, '613-678-4561', 'P1K 2P6');
+
+insert into billingaddress values(1005, 10005, '1336 Leet', '', Ottawa, '613-676-4561', 'H1K 2P6');
+insert into shippingaddress values(1005, 10005, '1336 Leet', '', Ottawa, '613-676-4561', 'H1K 2P6');
+
+insert into billingaddress values(1006, 10006, '13 Robinson', '', Ottawa, '613-675-4444', 'K1K 1F6');
+insert into shippingaddress values(1006, 10006, '13 Robinson', '', Ottawa, '613-675-4444', 'K1K 1F6');
+
+insert into billingaddress values(1007, 10007, '565 Carling', '', Ottawa, '613-422-8481', 'P1K 2B7');
+insert into shippingaddress values(1007, 10007, '565 Carling', '', Ottawa, '613-422-8481', 'P1K 2B7');
+
+insert into billingaddress values(1008, 10008, '13437 Woodridge', '', Ottawa, '613-428-4561', 'P1K 2J7');
+insert into shippingaddress values(1008, 10008, '13437 Woodridge', '', Ottawa, '613-428-4561', 'P1K 2J7');
+
+insert into billingaddress values(1009, 10009, '15 Metcalfe', '', Ottawa, '613-436-4354', 'A1K 1Z7');
+insert into shippingaddress values(1009, 10009, '15 Metcalfe', '', Ottawa, '613-436-4354', 'A1K 1Z7');
+
+insert into billingaddress values(1010, 10010, '13 Bank', '', Ottawa, '613-324-4541', 'G1K 2Q7');
+insert into shippingaddress values(1010, 10010, '13 Bank', '', Ottawa, '613-324-4541', 'G1K 2Q7');
+
+insert into billingaddress values(1011, 10011, '133 Slater', '', Ottawa, '613-546-4561', 'P1K 2P6');
+insert into shippingaddress values(1011, 10011, '133 Slater', '', Ottawa, '613-546-4561', 'P1K 2P6');
+
+insert into billingaddress values(1012, 10012, '337 King Edward', '', Ottawa, '613-654-4561', 'M1K 2B6');
+insert into shippingaddress values(1012, 10012, '337 King Edward', '', Ottawa, '613-654-4561', 'M1K 2B6');
+
+insert into billingaddress values(1013, 10013, '546 King Edward', '', Ottawa, '613-654-4341', 'M6K 2M6');
+insert into shippingaddress values(1013, 10013, '546 King Edward', '', Ottawa, '613-654-4341', 'M6K 2M6');
+
+insert into billingaddress values(1014, 10014, '543 Laurier', '', Ottawa, '613-332-4561', 'P1K 2P6');
+insert into shippingaddress values(1014, 10014, '543 Laurier', '', Ottawa, '613-332-4561', 'P1K 2P6');
+
+insert into billingaddress values(1015, 10015, '656 Laurier', '', Ottawa, '613-321-4861', 'B1M 2P6');
+insert into shippingaddress values(1015, 10015, '656 Laurier', '', Ottawa, '613-321-4861', 'B1M 2P6');
+
+insert into billingaddress values(1016, 10016, '537 Kent', '', Ottawa, '613-215-4561', 'P1K 2P6');
+insert into shippingaddress values(1016, 10016, '537 Kent', '', Ottawa, '613-215-4561', 'P1K 2P6');
+
+insert into billingaddress values(1017, 10017, '845 Kent', '', Ottawa, '613-243-5431', 'A8V 1B3');
+insert into shippingaddress values(1017, 10017, '845 Kent', '', Ottawa, '613-243-5431', 'A8V 1B3');
+
+insert into billingaddress values(1018, 10018, '548 Main', '', Ottawa, '613-546-4561', 'A2B 2P6');
+insert into shippingaddress values(1018, 10018, '548 Main', '', Ottawa, '613-546-4561', 'A2B 2P6');
+
+insert into billingaddress values(1019, 10019, '265 Main', '', Ottawa, '613-546-5614', 'Z1B 4P7');
+insert into shippingaddress values(1019, 10019, '265 Main', '', Ottawa, '613-546-5614', 'Z1B 4P7');
+
+insert into billingaddress values(1020, 10020, '2665 Greenbank', '', Ottawa, '613-564-2625', 'A1N 5P3');
+insert into shippingaddress values(1020, 10020, '2665 Greenbank', '', Ottawa, '613-564-2625', 'A1N 5P3');
+
+insert into billingaddress values(1021, 10021, '6565 Greenbank', '', Ottawa, '613-645-7686', 'J6B 2A9');
+insert into shippingaddress values(1021, 10021, '6565 Greenbank', '', Ottawa, '613-645-7686', 'J6B 2A9');
+
+insert into billingaddress values(1022, 10022, '124 Huntley', '', Ottawa, '613-123-4567', 'B5R 6N9');
+insert into shippingaddress values(1022, 10022, '124 Huntley', '', Ottawa, '613-123-4567', 'B5R 6N9');
+
+insert into billingaddress values(1023, 10023, '654 Pearson', '', Ottawa, '613-165-5645', '2A7 6C5');
+insert into shippingaddress values(1023, 10023, '654 Pearson', '', Ottawa, '613-165-5645', '2A7 6C5');
+
+insert into billingaddress values(1024, 10024, '897 Pearson', '', Ottawa, '613-124-2361', 'J1B 7A4');
+insert into shippingaddress values(1024, 10024, '897 Pearson', '', Ottawa, '613-124-2361', 'J1B 7A4');
+
+insert into billingaddress values(1025, 10025, '849 Carp', '', Ottawa, '613-546-8974', 'N1O 2C3');
+insert into shippingaddress values(1025, 10025, '849 Carp', '', Ottawa, '613-546-8974', 'N1O 2C3');
+
+insert into billingaddress values(1026, 10026, '301 Carp', '', Ottawa, '613-425-8795', 'M8R 3B3');
+insert into shippingaddress values(1026, 10026, '301 Carp', '', Ottawa, '613-425-8795', 'M8R 3B3');
+
+insert into billingaddress values(1027, 10027, '513 Blair', '', Ottawa, '613-134-1234', 'N1K 9P6');
+insert into shippingaddress values(1027, 10027, '513 Blair', '', Ottawa, '613-134-1234', 'N1K 9P6');
+
+insert into billingaddress values(1028, 10028, '894 Blair', '', Ottawa, '613-234-6321', 'B1M 7B8');
+insert into shippingaddress values(1028, 10028, '894 Blair', '', Ottawa, '613-234-6321', 'B1M 7B8');
+
+insert into billingaddress values(1029, 10029, '584 Lyon', '', Ottawa, '613-345-2354', 'A1H 3C4');
+insert into shippingaddress values(1029, 10029, '584 Lyon', '', Ottawa, '613-345-2354', 'A1H 3C4');
+
+insert into billingaddress values(1030, 10030, '876 Lyon', '', Ottawa, '613-324-4656', 'P1M 2D9');
+insert into shippingaddress values(1030, 10030, '876 Lyon', '', Ottawa, '613-324-4656', 'P1M 2D9');
