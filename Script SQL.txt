@@ -54,7 +54,6 @@ CREATE TABLE Purchase(
 	InvoiceNumber Integer NOT NULL,
 	MemberNumber Integer,
 	VideoID Integer,
-	VideoID2 Integer,
 	date_ordered DATE,
 	date_shipped DATE,
 	shipping_cost FLOAT,
@@ -108,9 +107,6 @@ CREATE TABLE Video(
 	DirectorID Integer,
 	Year VARCHAR,
 	Duration Integer,
-	ActorID Integer UNIQUE NOT NULL,
-	ActorID2 Integer,
-	ActorID3 Integer,
 	PRIMARY KEY (VideoID),
 	FOREIGN KEY(DirectorID) REFERENCES Director
 	On update cascade
@@ -393,3 +389,14 @@ insert into shippingaddress values(1029, 10029, '584 Lyon', '', Ottawa, '613-345
 
 insert into billingaddress values(1030, 10030, '876 Lyon', '', Ottawa, '613-324-4656', 'P1M 2D9');
 insert into shippingaddress values(1030, 10030, '876 Lyon', '', Ottawa, '613-324-4656', 'P1M 2D9');
+
+insert into download values(10001, 000001, '02-05-12', '14:30', '0.00');
+insert into download values(10002, 000002, '05-03-12', '15:30', '0.00');
+insert into download values(10003, 000003, '08-06-12', '16:30', '0.00');
+insert into download values(10004, 000004, '01-03-12', '17:30', '0.00');
+insert into download values(10005, 000005, '05-08-12', '18:30', '0.00');
+insert into download values(10006, 000006, '03-08-12', '19:30', '0.00');
+insert into download values(10007, 000007, '02-09-12', '12:30', '0.00');
+insert into download values(10008, 000008, '10-09-12', '17:00', '0.00');
+
+
