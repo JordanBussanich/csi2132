@@ -195,18 +195,33 @@ insert into member values (10030, 'Joey', 'Larocque', 'thisdatabase@gmail.com', 
 
 insert into director values(101, 'Spielberg', 'Steven', '1946-12-18');
 insert into actor values(1001, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st'); 
-insert into actor values(1002, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st');
-insert into actor values(1003, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st');
-insert into video values (000001, 'Jurassic Park', 19.99, 'Sci-fi', '8.0', true, 101, '1993', 127, 101);
-insert into videostar values(000001, 101, 
+insert into actor values(1002, 'Dern', 'Laura', '1967-02-10', 'http://www.imdb.com/name/nm0000368/?ref_=tt_ov_st');
+insert into actor values(1003, 'Goldblum', 'Jeff', '1952-10-22', 'http://www.imdb.com/name/nm0000156/?ref_=tt_ov_st');
+insert into video values (000001, 'Jurassic Park', 19.99, 'Sci-fi', '8.0', true, 101, '1993', 127);
+
+insert into videostar values(000001, 1001, 'Dr. Alan Grant');
+insert into videostar values(000001, 1002, 'Dr. Ellie Sattler');
+insert into videostar values(000001, 1003, 'Dr. Ian Malcolm');
 
 insert into director values(102, 'Fincher', 'David', '1962-08-28');
-insert into actor values(102, 'Pitt', 'Brad', '1963-12-18', 'http://www.imdb.com/name/nm0000093/?ref_=tt_ov_st'); 
-insert into video values (000002, 'Fight Club', 14.99, 'Drama', '8.9', true, 102, '1999', 139, 102);
+insert into actor values(1004, 'Pitt', 'Brad', '1963-12-18', 'http://www.imdb.com/name/nm0000093/?ref_=tt_ov_st');
+insert into actor values(1005, 'Norton', 'Edward', '1969-08-18', 'http://www.imdb.com/name/nm0001570/?ref_=tt_ov_st');
+insert into actor values(1006, 'Bonham Carter', 'Elena', '1966-05-26', 'http://www.imdb.com/name/nm0000307/?ref_=tt_ov_st');
+insert into video values (000002, 'Fight Club', 14.99, 'Drama', '8.9', true, 102, '1999', 139);
+
+insert into videostar values(000002, 1004, 'Tyler Durden');
+insert into videostar values(000002, 1005, 'The Narrator');
+insert into videostar values(000002, 1006, 'Marla Singer');
 
 insert into director values(103, 'Osborne', 'Mark', '1970-09-17');
-insert into actor values(103, 'Black', 'Jack', '1969-08-28', 'http://www.imdb.com/name/nm0085312/?ref_=tt_ov_st'); 
-insert into video values (000003, 'Kung Fu Panda', 14.99, 'Adventure', '7.6', true, 103, '1999', 139, 103);
+insert into actor values(1007, 'Black', 'Jack', '1969-08-28', 'http://www.imdb.com/name/nm0085312/?ref_=tt_ov_st'); 
+insert into actor values(1008, 'McShane', 'Ian', '1942-09-29', 'http://www.imdb.com/name/nm0574534/?ref_=tt_ov_st'); 
+insert into actor values(1009, 'Jolie', 'Angelina', '1975-06-04', 'http://www.imdb.com/name/nm0001401/?ref_=tt_ov_st'); 
+insert into video values (000003, 'Kung Fu Panda', 14.99, 'Adventure', '7.6', true, 103, '1999', 139);
+
+insert into videostar values(000003, 1007, 'Po');
+insert into videostar values(000003, 1008, 'Tai Lung');
+insert into videostar values(000003, 1009, 'Tigress');
 
 insert into director values(104, 'Saldanha', 'Carlos', '1968-07-20');
 insert into actor values(104, 'Romano', 'Ray', '1957-12-21', 'http://www.imdb.com/name/nm0005380/?ref_=tt_ov_st'); 
