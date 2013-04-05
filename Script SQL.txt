@@ -194,8 +194,11 @@ insert into member values (10029, 'Noemie', 'Schmidel', 'ihavenomore@gmail.com',
 insert into member values (10030, 'Joey', 'Larocque', 'thisdatabase@gmail.com', 'fillingallmyimagination');
 
 insert into director values(101, 'Spielberg', 'Steven', '1946-12-18');
-insert into actor values(101, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st'); 
+insert into actor values(1001, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st'); 
+insert into actor values(1002, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st');
+insert into actor values(1003, 'Neill', 'Sam', '1947-09-14', 'http://www.imdb.com/name/nm0000554/?ref_=tt_ov_st');
 insert into video values (000001, 'Jurassic Park', 19.99, 'Sci-fi', '8.0', true, 101, '1993', 127, 101);
+insert into videostar values(000001, 101, 
 
 insert into director values(102, 'Fincher', 'David', '1962-08-28');
 insert into actor values(102, 'Pitt', 'Brad', '1963-12-18', 'http://www.imdb.com/name/nm0000093/?ref_=tt_ov_st'); 
@@ -480,4 +483,6 @@ insert into purchase values(00025, 10025, 000026,  '04-04-12', '05-04-12', 6.99,
 insert into returns values(00016, 10016, 000007, 16.99);
 insert into returns values(00021, 10021, 000008, 14.99);
 insert into returns values(00024, 10024, 000021, 9.99);
+
+
 
