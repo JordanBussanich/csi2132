@@ -224,32 +224,73 @@ insert into videostar values(000003, 1008, 'Tai Lung');
 insert into videostar values(000003, 1009, 'Tigress');
 
 insert into director values(104, 'Saldanha', 'Carlos', '1968-07-20');
-insert into actor values(104, 'Romano', 'Ray', '1957-12-21', 'http://www.imdb.com/name/nm0005380/?ref_=tt_ov_st'); 
-insert into video values (000004, 'Ice Age: Dawn of the Dinosaurs', 12.99, 'Adventure', '7.6', true, 104, '2009', 94, 104);
+insert into actor values(1010, 'Romano', 'Ray', '1957-12-21', 'http://www.imdb.com/name/nm0005380/?ref_=tt_ov_st'); 
+insert into actor values(1011, 'Leguizamo', 'John', '1964-07-22', 'http://www.imdb.com/name/nm0000491/?ref_=tt_ov_st'); 
+insert into actor values(1012, 'Leary', 'Denis', '1957-08-18', 'http://www.imdb.com/name/nm0001459/?ref_=tt_ov_st'); 
+insert into video values (000004, 'Ice Age: Dawn of the Dinosaurs', 12.99, 'Adventure', '7.6', true, 104, '2009', 94);
+
+insert into videostar values(000004, 1010, 'Gazelle');
+insert into videostar values(000004, 1011, 'Glypto Boy');
+insert into videostar values(000004, 1012, 'Diego');
 
 insert into director values(105, 'Cameron', 'James', '1954-08-16');
-insert into actor values(105, 'DiCaprio', 'Leonardo', '1974-11-11', 'http://www.imdb.com/name/nm0000138/?ref_=tt_ov_st'); 
-insert into video values (000005, 'Titanic', 11.99, 'Romance', '7.6', true, 105, '1997', 194, 105);
+insert into actor values(1013, 'DiCaprio', 'Leonardo', '1974-11-11', 'http://www.imdb.com/name/nm0000138/?ref_=tt_ov_st'); 
+insert into actor values(1014, 'Winslet', 'Kate', '1975-10-05', 'http://www.imdb.com/name/nm0000701/?ref_=tt_ov_st'); 
+insert into actor values(1015, 'Zane', 'Billy', '1966-02-24', 'http://www.imdb.com/name/nm0000708/?ref_=tt_ov_st'); 
+insert into video values (000005, 'Titanic', 11.99, 'Romance', '7.6', true, 105, '1997', 194);
+
+insert into videostar values(000005, 1013, 'Jack Dawson');
+insert into videostar values(000005, 1014, 'Rose Dewitt Bukater');
+insert into videostar values(000005, 1015, 'Caledon Hockley');
 
 insert into director values(106, 'Whedon', 'Joss', '1964-06-23');
-insert into actor values(106, 'Downey Jr.', 'Robert', '1965-04-04', 'http://www.imdb.com/name/nm0000375/?ref_=tt_ov_st'); 
-insert into video values (000006, 'The Avengers', 16.99, 'Action', '8.3', true, 106, '2012', 143, 106);
+insert into actor values(1016, 'Downey Jr.', 'Robert', '1965-04-04', 'http://www.imdb.com/name/nm0000375/?ref_=tt_ov_st'); 
+insert into actor values(1017, 'Evans', 'Chris', '1981-06-13', 'http://www.imdb.com/name/nm0262635/?ref_=tt_ov_st'); 
+insert into actor values(1018, 'Johansson', 'Scarlett', '1984-11-22', 'http://www.imdb.com/name/nm0424060/?ref_=tt_ov_st'); 
+insert into video values (000006, 'The Avengers', 16.99, 'Action', '8.3', true, 106, '2012', 143);
+
+insert into videostar values(000006, 1016, 'Iron Man');
+insert into videostar values(000006, 1017, 'Captain America');
+insert into videostar values(000006, 1018, 'Black Widow');
 
 insert into director values(107, 'Mottola', 'Greg', '1964-07-11');
-insert into actor values(107, 'Rogan', 'Seth', '1982-04-15', 'http://www.imdb.com/name/nm0736622/?ref_=tt_ov_st'); 
-insert into video values (000007, 'Superbad', 16.99, 'Comedy', '7.6', true, 107, '2007', 113, 107);
+insert into actor values(1019, 'Cera', 'Michael', '1988-06-07', 'http://www.imdb.com/name/nm0148418/?ref_=tt_ov_st'); 
+insert into actor values(1020, 'Hill', 'Jonah', '1983-12-20', 'http://www.imdb.com/name/nm1706767/?ref_=tt_ov_st');
+insert into actor values(1021, 'Plasse', 'Christopher', '1989-06-20', 'http://www.imdb.com/name/nm2395586/?ref_=tt_ov_st');
+insert into video values (000007, 'Superbad', 16.99, 'Comedy', '7.6', true, 107, '2007', 113);
+
+insert into videostar values(000006, 1019, 'Evan');
+insert into videostar values(000006, 1020, 'Seth');
+insert into videostar values(000006, 1021, 'Fogell');
 
 insert into director values(108, 'McKay', 'Adam', '1968-04-17');
-insert into actor values(108, 'Ferrell', 'Will', '1967-07-16', 'http://www.imdb.com/name/nm0002071/?ref_=tt_ov_wr'); 
-insert into video values (000008, 'Step Brothers', 14.99, 'Comedy', '6.7', true, 108, '2008', 98, 108);
+insert into actor values(1022, 'Ferrell', 'Will', '1967-07-16', 'http://www.imdb.com/name/nm0002071/?ref_=tt_ov_wr'); 
+insert into actor values(1023, 'Reilly', 'John', '1965-05-24', 'http://www.imdb.com/name/nm0000604/?ref_=tt_ov_st'); 
+insert into actor values(1024, 'Steenburgen', 'Mary', '1953-02-08', 'http://www.imdb.com/name/nm0005460/?ref_=tt_ov_st'); 
+insert into video values (000008, 'Step Brothers', 14.99, 'Comedy', '6.7', true, 108, '2008', 98);
+
+insert into videostar values(000008, 1022, 'Brennan Huff');
+insert into videostar values(000008, 1023, 'Dale Doback');
+insert into videostar values(000008, 1024, 'Nancy Huff');
 
 insert into director values(109, 'MacFarlane', 'Seth', '1973-10-26');
-insert into actor values(109, 'Wahlberg', 'Mark', '1971-06-05', 'http://www.imdb.com/name/nm0000242/?ref_=tt_ov_st'); 
-insert into video values (000009, 'Ted', 14.99, 'Comedy', '7.1', true, 109, '2012', 109, 109);
+insert into actor values(1025, 'Wahlberg', 'Mark', '1971-06-05', 'http://www.imdb.com/name/nm0000242/?ref_=tt_ov_st'); 
+insert into actor values(1026, 'Kunis', 'Mila', '1983-08-14', 'http://www.imdb.com/name/nm0005109/?ref_=tt_cl_t2'); 
+insert into actor values(1027, 'MacFarlane', 'Seth', '1973-10-26', 'http://www.imdb.com/name/nm0532235/?ref_=tt_cl_t3'); 
+insert into video values (000009, 'Ted', 14.99, 'Comedy', '7.1', true, 109, '2012', 109);
+
+insert into videostar values(000009, 1025, 'John Bennett');
+insert into videostar values(000009, 1026, 'Lori Collins');
+insert into videostar values(000009, 1027, 'Ted');
 
 insert into director values(110, 'Scorsese', 'Martin', '1942-11-17');
-insert into actor values(110, 'Damon', 'Matt', '1970-10-08', 'http://www.imdb.com/name/nm0000354/?ref_=tt_ov_st'); 
-insert into video values (000010, 'The Departed', 14.99, 'Thriller', '8.5', true, 110, '2006', 151, 110);
+insert into actor values(1028, 'Damon', 'Matt', '1970-10-08', 'http://www.imdb.com/name/nm0000354/?ref_=tt_ov_st'); 
+insert into actor values(1029, 'Nicholson', 'Jack', '1937-04-22', 'http://www.imdb.com/name/nm0000197/?ref_=tt_ov_st'); 
+insert into video values (000010, 'The Departed', 14.99, 'Thriller', '8.5', true, 110, '2006', 151);
+
+insert into videostar values(000010, 1028, 'Colin Sullivan');
+insert into videostar values(000010, 1029, 'Frank Costello');
+insert into videostar values(000010, 1013, 'Billy');
 
 insert into director values(111, 'Darabont', 'Frank', '1959-01-28');
 insert into actor values(111, 'Hanks', 'Tom', '1956-07-09', 'http://www.imdb.com/name/nm0000158/?ref_=tt_ov_st'); 
