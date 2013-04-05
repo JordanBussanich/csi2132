@@ -293,49 +293,124 @@ insert into videostar values(000010, 1029, 'Frank Costello');
 insert into videostar values(000010, 1013, 'Billy');
 
 insert into director values(111, 'Darabont', 'Frank', '1959-01-28');
-insert into actor values(111, 'Hanks', 'Tom', '1956-07-09', 'http://www.imdb.com/name/nm0000158/?ref_=tt_ov_st'); 
-insert into video values (000011, 'The Green Mile', 19.99, 'Drama', '8.5', true, 111, '1999', 189, 111);
+insert into actor values(1030, 'Hanks', 'Tom', '1956-07-09', 'http://www.imdb.com/name/nm0000158/?ref_=tt_ov_st'); 
+insert into actor values(1031, 'Duncan', 'Michael', '1957-12-10', 'http://www.imdb.com/name/nm0003817/?ref_=tt_cl_t2'); 
+insert into actor values(1032, 'Morse', 'David', '1953-10-11', 'http://www.imdb.com/name/nm0001556/?ref_=tt_cl_t3'); 
+insert into video values (000011, 'The Green Mile', 19.99, 'Drama', '8.5', true, 111, '1999', 189);
+
+insert into videostar values(000011, 1030, 'Paul Edgecomb');
+insert into videostar values(000011, 1031, 'John Coffey');
+insert into videostar values(000011, 1032, 'Brutus Howell');
 
 insert into director values(112, 'Nolan', 'Christopher', '1970-07-30');
-insert into actor values(112, 'Bale', 'Christian', '1974-01-30', 'http://www.imdb.com/name/nm0000288/?ref_=tt_ov_st'); 
-insert into video values (000012, 'The Prestige', 14.99, 'Drama', '8.5', true, 112, '2006', 130, 112);
+insert into actor values(1033, 'Bale', 'Christian', '1974-01-30', 'http://www.imdb.com/name/nm0000288/?ref_=tt_ov_st'); 
+insert into actor values(1034, 'Jackman', 'Hugh', '1968-10-12', 'http://www.imdb.com/name/nm0413168/?ref_=tt_cl_t1'); 
+insert into video values (000012, 'The Prestige', 14.99, 'Drama', '8.5', true, 112, '2006', 130);
+
+insert into videostar values(000012, 1033, 'Robert Angier');
+insert into videostar values(000012, 1034, 'Alfred Borden');
+insert into videostar values(000012, 1018, 'Olivia Wenscombe');
 
 insert into director values(113, 'Mangold', 'James', '1963-12-16');
-insert into actor values(113, 'Cusack', 'John', '1966-06-28', 'http://www.imdb.com/name/nm0000131/?ref_=tt_ov_st'); 
-insert into video values (000013, 'Identity', 14.99, 'Thriller', '7.2', true, 113, '2003', 90, 113);
+insert into actor values(1035, 'Cusack', 'John', '1966-06-28', 'http://www.imdb.com/name/nm0000131/?ref_=tt_ov_st'); 
+insert into actor values(1036, 'Liotta', 'Ray', '1954-12-18', 'http://www.imdb.com/name/nm0000501/?ref_=tt_ov_st'); 
+insert into actor values(1037, 'Peet', 'Amanda', '1972-01-11', 'http://www.imdb.com/name/nm0001605/?ref_=tt_ov_st'); 
+insert into video values (000013, 'Identity', 14.99, 'Thriller', '7.2', true, 113, '2003', 90);
+
+insert into videostar values(000013, 1035, 'Ed');
+insert into videostar values(000013, 1036, 'Rhodes');
+insert into videostar values(000013, 1037, 'Paris');
 
 insert into director values(114, 'Burger', 'Neil', '1968-03-22');
-insert into actor values(114, 'Norton', 'Edward', '1969-08-18', 'http://www.imdb.com/name/nm0001570/?ref_=tt_ov_st'); 
-insert into video values (000014, 'The Illusionist', 12.99, 'Romance', '7.6', true, 114, '2006', 110, 114);
+insert into actor values(1039, 'Biel', 'Jessica', '1982-03-03', 'http://www.imdb.com/name/nm0004754/?ref_=tt_ov_st'); 
+insert into actor values(1040, 'Giamatti', 'Paul', '1967-06-06', 'http://www.imdb.com/name/nm0316079/?ref_=tt_ov_st'); 
+insert into video values (000014, 'The Illusionist', 12.99, 'Romance', '7.6', true, 114, '2006', 110);
+
+insert into videostar values(000014, 1039, 'Sophie');
+insert into videostar values(000014, 1040, 'Inspector Uhl');
+insert into videostar values(000014, 1005, 'Sophie');
 
 insert into director values(115, 'Meirelles', 'Fernando', '1955-11-09');
-insert into actor values(115, 'Fiennes', 'Ralph', '1962-12-22', 'http://www.imdb.com/name/nm0000146/?ref_=tt_ov_st'); 
-insert into video values (000015, 'The constant Gardener', 11.99, 'Thriller', '7.5', true, 115, '1997', 129, 115);
+insert into actor values(1041, 'Fiennes', 'Ralph', '1962-12-22', 'http://www.imdb.com/name/nm0000146/?ref_=tt_ov_st'); 
+insert into actor values(1042, 'Weisz', 'Rachel', '1970-03-07', 'http://www.imdb.com/name/nm0001838/?ref_=tt_ov_st'); 
+insert into actor values(1043, 'Kounde', 'Hubert', '1970-12-30', 'http://www.imdb.com/name/nm0468003/?ref_=tt_ov_st'); 
+insert into video values (000015, 'The constant Gardener', 11.99, 'Thriller', '7.5', true, 115, '1997', 129);
+
+insert into videostar values(000015, 1041, 'Justin Quayle');
+insert into videostar values(000015, 1042, 'Tessa Quayle');
+insert into videostar values(000015, 1043, 'Dr. Arnold Bluhm');
 
 insert into director values(116, 'McGuigan', 'Paul', '1963-09-19');
-insert into actor values(116, 'Harnett', 'Josh', '1978-07-21', 'http://www.imdb.com/name/nm0001326/?ref_=tt_ov_st'); 
-insert into video values (000016, 'Wicker Park', 12.99, 'Romance', '6.8', true, 116, '2004', 123, 116);
+insert into actor values(1044, 'Harnett', 'Josh', '1978-07-21', 'http://www.imdb.com/name/nm0001326/?ref_=tt_ov_st'); 
+insert into actor values(1045, 'Kruger', 'Diane', '1976-07-15', 'http://www.imdb.com/name/nm1208167/?ref_=tt_ov_st'); 
+insert into actor values(1046, 'Lillard', 'Matthew', '1970-01-24', 'http://www.imdb.com/name/nm0000498/?ref_=tt_ov_st'); 
+insert into video values (000016, 'Wicker Park', 12.99, 'Romance', '6.8', true, 116, '2004', 123);
+
+insert into videostar values(000016, 1044, 'Matthew');
+insert into videostar values(000016, 1045, 'Lisa');
+insert into videostar values(000016, 1046, 'Luke');
 
 insert into director values(117, 'Cristofer', 'Michael', '1945-01-22');
-insert into actor values(117, 'Banderas', 'Antonio', '1960-08-10', 'http://www.imdb.com/name/nm0000104/?ref_=tt_ov_st'); 
-insert into video values (000017, 'Original Sin', 11.99, 'Drama', '5.8', true, 117, '2001', 103, 117);
+insert into actor values(1047, 'Banderas', 'Antonio', '1960-08-10', 'http://www.imdb.com/name/nm0000104/?ref_=tt_ov_st'); 
+insert into actor values(1048, 'Jane', 'Thomas', '1969-02-22', 'http://www.imdb.com/name/nm0005048/?ref_=tt_ov_st'); 
+insert into video values (000017, 'Original Sin', 11.99, 'Drama', '5.8', true, 117, '2001', 103);
 
-insert into actor values(118, 'Pearce', 'Guy', '1967-10-05', 'http://www.imdb.com/name/nm0001602/?ref_=tt_ov_st'); 
-insert into video values (000018, 'Memento', 14.99, 'Thriller', '8.6', true, 112, '2000', 11, 118);
+insert into videostar values(000017, 1047, 'Luis Antonio Vargas');
+insert into videostar values(000017, 1048, 'Billy');
+insert into videostar values(000017, 1009, 'Julia Russell');
 
-insert into video values (000019, 'Saving Private Ryan', 14.99, 'Drama', '8.6', true, 101, '1998', 169, 111);
+insert into actor values(1049, 'Pearce', 'Guy', '1967-10-05', 'http://www.imdb.com/name/nm0001602/?ref_=tt_ov_st'); 
+insert into actor values(1050, 'Carrie-Anne', 'Moss', '1967-10-05', 'http://www.imdb.com/name/nm0001602/?ref_=tt_ov_st'); 
+insert into actor values(1051, 'Pantoliano', 'Joe', '1951-09-12', 'http://www.imdb.com/name/nm0001592/?ref_=tt_cl_t3'); 
+insert into video values (000018, 'Memento', 14.99, 'Thriller', '8.6', true, 112, '2000', 113);
 
+insert into videostar values(000018, 1049, 'Leonard Shelby');
+insert into videostar values(000018, 1050, 'Natalie');
+insert into videostar values(000018, 1051, 'Teddy Gammell');
+
+insert into actor values(1052, 'Sizemore', 'Tom', '1961-11-29', 'http://www.imdb.com/name/nm0001744/?ref_=tt_ov_st'); 
+insert into video values (000019, 'Saving Private Ryan', 14.99, 'Drama', '8.6', true, 101, '1998', 169);
+
+insert into videostar values(000019, 1052, 'Sergeant Horvath');
+insert into videostar values(000019, 1028, 'Private Ryan');
+insert into videostar values(000019, 1030, 'Captain Miller');
+
+insert into actor values(1053, 'Levitt-Gordon', 'Joseph', '1981-02-1', 'http://www.imdb.com/name/nm0330687/?ref_=tt_ov_st'); 
+insert into actor values(1054, 'Page', 'Ellen', '1987-02-21', 'http://www.imdb.com/name/nm0680983/?ref_=tt_ov_st'); 
 insert into video values (000020, 'Inception', 14.99, 'Adventure', '8.8', true, 112, '2010', 148, 105);
 
-insert into actor values(119, 'Sigourney', 'Weaver', '1949-10-08', 'http://www.imdb.com/name/nm0000244/?ref_=tt_ov_st'); 
-insert into video values (000021, 'Alien', 9.99, 'Sci-fi', '8.5', true, 101, '1979', 127, 119);
+insert into videostar values(000020, 1053, 'Arthur');
+insert into videostar values(000020, 1054, 'Ariadne');
+insert into videostar values(000020, 1013, 'Cobb');
 
-insert into actor values(120, 'Freeman', 'Morgan', '1937-06-01', 'http://www.imdb.com/name/nm0000151/?ref_=tt_ov_st'); 
-insert into video values (000022, 'The Shawshank Redemption', 14.99, 'Drama', '9.3', true, 111, '1994', 142, 120);
+insert into director values(118, 'Scott', 'Ridley', '1937-11-30'); 
+insert into actor values(1055, 'Sigourney', 'Weaver', '1949-10-08', 'http://www.imdb.com/name/nm0000244/?ref_=tt_ov_st'); 
+insert into actor values(1056, 'Skerritt', 'Tom', '1933-08-25', 'http://www.imdb.com/name/nm0000643/?ref_=tt_ov_st'); 
+insert into actor values(1057, 'Hurt', 'John', '1940-01-22', 'http://www.imdb.com/name/nm0000457/?ref_=tt_ov_st'); 
+insert into video values (000021, 'Alien', 9.99, 'Sci-fi', '8.5', true, 118, '1979', 127);
+
+insert into videostar values(000021, 1055, 'Ripley');
+insert into videostar values(000021, 1056, 'Dallas');
+insert into videostar values(000021, 1057, 'Kane');
+
+insert into actor values(1058, 'Freeman', 'Morgan', '1937-06-01', 'http://www.imdb.com/name/nm0000151/?ref_=tt_ov_st'); 
+insert into actor values(1059, 'Robbins', 'Tim', '1958-10-16', 'http://www.imdb.com/name/nm0000209/?ref_=tt_ov_st'); 
+insert into actor values(1060, 'Gunton', 'Bob', '1937-06-01', 'http://www.imdb.com/name/nm0348409/?ref_=tt_ov_st'); 
+insert into video values (000022, 'The Shawshank Redemption', 14.99, 'Drama', '9.3', true, 111, '1994', 142);
+
+insert into videostar values(000022, 1058, 'Ellis Redding');
+insert into videostar values(000022, 1059, 'Andy Dufresne');
+insert into videostar values(000022, 1060, 'Warden Norton');
 
 insert into director values(118, 'Carpenter', 'John', '1948-01-16');
-insert into actor values(121, 'Russell', 'Kurt', '1951-03-17', 'http://www.imdb.com/name/nm0000621/?ref_=tt_ov_st'); 
-insert into video values (000023, 'The Thing', 14.99, 'Sci-fi', '8.2', true, 118, '1982', 109, 121);
+insert into actor values(1061, 'Russell', 'Kurt', '1951-03-17', 'http://www.imdb.com/name/nm0000621/?ref_=tt_ov_st'); 
+insert into actor values(1062, 'Brimley', 'Wilford', '1934-09-27', 'http://www.imdb.com/name/nm0000979/?ref_=tt_ov_st'); 
+insert into actor values(1063, 'David', 'Keith', '1956-06-04', 'http://www.imdb.com/name/nm0202966/?ref_=tt_ov_st'); 
+insert into video values (000023, 'The Thing', 14.99, 'Sci-fi', '8.2', true, 118, '1982', 109);
+
+insert into videostar values(000023, 1061, 'R.J. MacReady');
+insert into videostar values(000023, 1062, 'Dr. Blair');
+insert into videostar values(000023, 1063, 'Palmer');
 
 insert into director values(119, 'Penn', 'Sean', '1960-08-17');
 insert into actor values(122, 'Hirsch', 'Emile', '1985-03-13', 'http://www.imdb.com/name/nm0386472/?ref_=tt_ov_st'); 
