@@ -16,20 +16,11 @@ CREATE TABLE Actor(
 	IMDB_link TEXT,
 	PRIMARY KEY (ActorID));	
 
-CREATE TABLE Card(
-	CardNumber INTEGER,
-	ExpDate Date NOT NULL,
-	Name VARCHAR NOT NULL,
-	PRIMARY KEY(CardNumber));
-
 CREATE TABLE BillingInformation (
 	MemberNumber INTEGER NOT NULL,
-	CardNumber INTEGER,
+	CardNumber BIGINT,
 	Type VARCHAR,
-	PRIMARY KEY(MemberNumber),
-	FOREIGN KEY(CardNumber) REFERENCES Card
-	ON DELETE RESTRICT
-	ON UPDATE CASCADE);
+	PRIMARY KEY(MemberNumber));
 
 CREATE TABLE BillingAddress(
 	BAddresID INTEGER,
