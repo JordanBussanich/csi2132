@@ -8,7 +8,8 @@
 	//include the nessisary hosting SQL info
 	include ("config.php");
 	//connect to the peirce.me server, and connect to the a8341597_AVA database which contains the user credentials
-	if(mysql_connect($host, $user, $pass) && mysql_select_db($db)){
+	if(mysql_connect($host, $user, $pass) && mysql_select_db($db))
+	{
 		//true if the user has pressed submit
 		$submit = @ $_POST['submit'];
 		//set variable from the form submited
