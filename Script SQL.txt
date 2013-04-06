@@ -125,7 +125,6 @@ CREATE TABLE Director(
 CREATE TABLE Award(
 	AwardID Integer NOT NULL,
 	Year VARCHAR,
-	Description VARCHAR,
 	Category VARCHAR,
 	PRIMARY KEY(AwardID, Year));
 
@@ -650,5 +649,118 @@ insert into returns values(00016, 10016, 000007, 16.99);
 insert into returns values(00021, 10021, 000008, 14.99);
 insert into returns values(00024, 10024, 000021, 9.99);
 
+insert into award values(1001, 1928, 'Best Actor in a leading role');
+insert into award values(1002, 1936, 'Best Actor in a supporting role');
+insert into award values(1003, 1928, 'Best Actress in a leading role');
+insert into award values(1004, 1936, 'Best Actress in a leading role');
+insert into award values(1005, 2001, 'Best animated feature');
+insert into award values(1006, 1931, 'Best Animated short film');
+insert into award values(1007, 1928, 'Best Cinematography');
+insert into award values(1008, 1948, 'Best costume design');
+insert into award values(1009, 1928, 'Best Director');
+insert into award values(1011, 1943, 'Best documentary feature');
+insert into award values(1012, 1941, 'Best documentary short');
+insert into award values(1013, 1935, 'Best film editing');
+insert into award values(1014, 1947, 'Best foreign language film');
+insert into award values(1015, 1931, 'Best makeup and hairstyling');
+insert into award values(1016, 1981, 'Best original score');
+insert into award values(1017, 1934, 'Best original song');
+insert into award values(1018, 1928, 'Best picture');
+insert into award values(1019, 1928, 'Best production design');
+insert into award values(1020, 1963, 'Best sound editing');
+insert into award values(1021, 1930, 'Best sound mixing');
+insert into award values(1022, 1939, 'Best visual effects');
+insert into award values(1023, 1928, 'Best adapted screeplay');
+insert into award values(1024, 1940, 'Best original screenplay');
+
+insert into videoawards(000001, 1020, 1994, true);
+insert into videoawards(000001, 1022, 1994, true);
+insert into videoawards(000001, 1021, 1994, true);
+
+insert into videoawards(000002, 1020, 2000, false);
+
+insert into videoawards(000003, 1005, 2009, false);
+
+insert into videoawards(000005, 1008, 1998, true);
+insert into videoawards(000005, 1009, 1998, true);
+insert into videoawards(000005, 1007, 1998, true);
+insert into videoawards(000005, 1022, 1998, true);
+insert into videoawards(000005, 1013, 1998, true);
+insert into videoawards(000005, 1016, 1998, true);
+insert into videoawards(000005, 1018, 1998, true);
+insert into videoawards(000005, 1020, 1998, true);
+insert into videoawards(000005, 1015, 1998, false);
+insert into videoawards(000005, 1002, 1998, false);
+insert into videoawards(000005, 1004, 1998, false);
+
+insert into videoawards(000006, 1022, 2013, false);
+
+insert into videoawards(000006, 1022, 2013, false);
+
+insert into videoawards(000009, 1017, 2013, false);
+
+insert into videoawards(000010, 1009, 2007, true);
+insert into videoawards(000010, 1013, 2007, true);
+insert into videoawards(000010, 1018, 2007, true);
+insert into videoawards(000010, 1023, 2007, true);
+
+insert into videoawards(000011, 1002, 2000, false);
+insert into videoawards(000011, 1018, 2000, false);
+insert into videoawards(000011, 1020, 2000, false);
+insert into videoawards(000011, 1023, 2000, false);
+
+insert into videoawards(000012, 1009, 2007, false);
+insert into videoawards(000012, 1007, 2007, false);
+
+insert into videoawards(000014, 1007, 2007, false);
+
+insert into videoawards(000015, 1004, 2006, true);
+
+insert into videoawards(000018, 1013, 2002, false);
+insert into videoawards(000018, 1023, 2002, false);
+
+insert into videoawards(000019, 1007, 1999, true);
+insert into videoawards(000019, 1009, 1999, true);
+insert into videoawards(000019, 1020, 1999, true);
+insert into videoawards(000019, 1013, 1999, true);
+insert into videoawards(000019, 1021, 1999, true);
+
+insert into videoawards(000020, 1007, 2011, true);
+insert into videoawards(000020, 1020, 2011, true);
+insert into videoawards(000020, 1021, 2011, true);
+insert into videoawards(000020, 1022, 2011, true);
+
+insert into videoawards(000021, 1022, 1980, true);
+
+insert into videoawards(000022, 1001, 1995, false);
+insert into videoawards(000022, 1007, 1995, false);
+insert into videoawards(000022, 1013, 1995, false);
+insert into videoawards(000022, 1016, 1995, false);
+insert into videoawards(000022, 1018, 1995, false);
+insert into videoawards(000022, 1020, 1995, false);
+insert into videoawards(000022, 1023, 1995, false);
+
+insert into videoawards(000024, 1013, 2008, false);
+insert into videoawards(000024, 1002, 2008, false);
+
+insert into videoawards(000025, 1009, 2005, true);
+insert into videoawards(000025, 1018, 2005, true);
+insert into videoawards(000025, 1003, 2005, true);
+insert into videoawards(000025, 1004, 2005, true);
+
+insert into videoawards(000027, 1002, 1993, true);
+insert into videoawards(000027, 1009, 1993, true);
+insert into videoawards(000027, 1013, 1993, true);
+insert into videoawards(000027, 1018, 1993, true);
+
+insert into videoawards(000028, 1013, 1996, false);
+
+insert into videoawards(000028, 1013, 1996, false);
+
+insert into videoawards(000029, 1004, 1998, true);
+insert into videoawards(000029, 1023, 1998, true);
+
+insert into videoawards(000030, 1001, 2004, true);
+insert into videoawards(000030, 1002, 2004, true);
 
 
