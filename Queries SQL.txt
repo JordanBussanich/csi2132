@@ -11,3 +11,5 @@ WHERE V.Genre = <JSP List here> AND V.VideoID = D.VideoID AND P.VideoID = V.Vide
 SELECT S.address1, B.MemberNumber, B.CardNumber, B.Type
 FROM ShippingAddress S, Billinginformation B, Member M
 WHERE M.Membernumber = <JSP List here> AND  M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;	
+
+SELECT 
