@@ -3,11 +3,11 @@
  *	Logs the user out.
  */
 
-
-//start the session so as to be able to modify the session
+// Start the session so we can modify the it
 session_start();
-//destroy the session so they are unable to see member pages
+// Destroy the session so the user is unable to see member pages
 session_destroy();
-//if a manual redirect is attempted link the user back to the login page
+// Return to the login page
 echo "You've been logged out! <a href='index.php'> Click here </a>to log back in.";
+
 ?>

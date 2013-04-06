@@ -1,7 +1,7 @@
 set search_path = 'projectcsi2132'
 
 CREATE TABLE Member (
-	MemberNumber Integer UNIQUE NOT NULL,
+	MemberNumber SERIAL,
 	Lastname VARCHAR,
 	Firstname VARCHAR,
 	email VARCHAR,
@@ -9,31 +9,31 @@ CREATE TABLE Member (
 	PRIMARY KEY(MemberNumber));
 
 CREATE TABLE Actor(
-	ActorID Integer UNIQUE NOT NULL,
-	Lastname VARCHAR,
-	Firstname VARCHAR,
+	ActorID SERIAL,
+	Lastname VARCHAR NOT NULL,
+	Firstname VARCHAR NOT NULL,
 	Date_of_birth DATE,
-	IMdB_link TEXT,
+	IMDB_link TEXT,
 	PRIMARY KEY (ActorID));	
 
 CREATE TABLE Card(
-	CardNumber Integer NOT NULL,
-	ExpDate Date,
-	Name VARCHAR,
+	CardNumber INTEGER,
+	ExpDate Date NOT NULL,
+	Name VARCHAR NOT NULL,
 	PRIMARY KEY(CardNumber));
 
-CREATE TABLE BilingInformation (
-	MemberNumber Integer NOT NULL,
-	CardNumber Integer,
+CREATE TABLE BillingInformation (
+	MemberNumber SERIAL NOT NULL,
+	CardNumber INTEGER,
 	Type VARCHAR,
 	PRIMARY KEY(MemberNumber),
 	FOREIGN KEY(CardNumber) REFERENCES Card
-	On delete restrict
-	on update cascade);
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
 CREATE TABLE BillingAddress(
-	BAddresID Integer NOT NULL,
-	MemberNumber Integer,
+	BAddresID SERIAL,
+	MemberNumber SERIAL NOT NULL,
 	address1 VARCHAR,
 	address2 VARCHAR,
 	city VARCHAR,
@@ -41,12 +41,12 @@ CREATE TABLE BillingAddress(
 	postalcode VARCHAR,
 	PRIMARY KEY(BAddresID),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
-	On update cascade
-	on delete restrict);
+	ON UPDATE CASCADE,
+	ON DELETE RESTRICT);
 
 CREATE TABLE ShippingAddress(
-	SAddresID Integer NOT NULL,
-	MemberNumber Integer,
+	SAddresID SERIAL,
+	MemberNumber SERIAL NOT NULL,
 	address1 VARCHAR,
 	address2 VARCHAR,
 	city VARCHAR,
@@ -54,115 +54,117 @@ CREATE TABLE ShippingAddress(
 	postalcode VARCHAR,
 	PRIMARY KEY(SAddresID),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
-	On update cascade
-	On delete restrict);
+	ON UPDATE CASCADE,
+	ON DELETE RESTRICT);
 
 CREATE TABLE Director(
-	DirectorID Integer UNIQUE NOT NULL,
+	DirectorID SERIAL,
 	Lastname VARCHAR,
 	Firstname VARCHAR,
 	Date_of_birth DATE,
 	PRIMARY KEY(DirectorID));
 
 CREATE TABLE Award(
-	AwardID Integer NOT NULL,
+	AwardID SERIAL,
 	Year VARCHAR,
 	Category VARCHAR,
 	PRIMARY KEY(AwardID));
 
 CREATE TABLE Video(
-	VideoID INTEGER UNIQUE NOT NULL,
+	VideoID SERIAL,
 	Name VARCHAR,
 	Salesprice NUMERIC (8,2),
-	Genre Varchar,
+	Genre VARCHAR,
 	Rating VARCHAR,
 	InStock Boolean,
-	DirectorID Integer,
+	DirectorID INTEGER,
 	Year VARCHAR,
-	Duration Integer,
+	Duration INTEGER,
 	PRIMARY KEY (VideoID),
 	FOREIGN KEY(DirectorID) REFERENCES Director
-	On update cascade
-	On delete restrict);
+	ON UPDATE CASCADE,
+	ON DELETE RESTRICT);
 
 CREATE TABLE Purchase(
-	InvoiceNumber Integer,
-	MemberNumber Integer,
-	VideoID Integer,
+	InvoiceNumber SERIAL,
+	MemberNumber INTEGER,
+	VideoID INTEGER,
 	date_ordered DATE,
 	date_shipped DATE,
-	shipping_cost FLOAT,
-	speed Integer,
+	shipping_cost NUMERIC (8,2),
+	speed INTEGER,
 	carrier VARCHAR,
-	Primary key(InvoiceNumber),
+	PRIMARY KEY(InvoiceNumber),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
-	On delete restrict
-	On update cascade,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE,
 	FOREIGN KEY (VideoID) REFERENCES Video
-	On delete restrict
-	On update cascade);
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
-Create Table Basket(
-	InvoiceNumber Integer,
-	VideoID Integer,
-	Basket_id Integer,
-	Foreign key(InvoiceNumber) references purchase
-	On delete restrict
-	On update cascade,
-	Foreign key(VideoID) references Video
-	On delete restrict
-	On update cascade);
+CREATE TABLE Basket(
+	InvoiceNumber SERIAL NOT NULL,
+	VideoID INTEGER,
+	Basket_id SERIAL,
+	PRIMARY KEY(Basket_id),
+	FOREIGN KEY(InvoiceNumber) REFERENCES Purchase,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE,
+	FOREIGN KEY(VideoID) REFERENCES Video,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
 CREATE TABLE Returns(
-	InvoiceNumber Integer,
-	MemberNumber Integer,
-	VideoID Integer,
+	InvoiceNumber INTEGER,
+	MemberNumber INTEGER,
+	VideoID INTEGER,
 	Negative_sales Numeric(8,2),
-	Primary key(InvoiceNumber, VideoID),
-	Foreign key(VideoID) references Video
-	On delete restrict
-	On update cascade,
-	Foreign key(MemberNumber) references Member
-	On delete restrict
-	On update cascade);
+	PRIMARY KEY(InvoiceNumber, VideoID),
+	FOREIGN KEY(VideoID) references Video
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE,
+	FOREIGN KEY(MemberNumber) references Member
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 	
 CREATE TABLE Download(
-	MemberNumber Integer,
-	VideoID Integer,
+	MemberNumber SERIAL NOT NULL,
+	VideoID SERIAL NOT NULL,
 	Date DATE,
 	Time TIME,
 	Fee FLOAT,
 	PRIMARY KEY(MemberNumber, VideoID),
 	FOREIGN KEY(VideoID) REFERENCES Video
-	On delete restrict
-	On update cascade,
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE,
 	FOREIGN KEY(MemberNumber) REFERENCES Member
-	On delete restrict
-	On update cascade);
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
 CREATE TABLE VideoAwards(
-	VideoID Integer,
-	AwardID Integer,
+	VideoID SERIAL NOT NULL,
+	AwardID SERIAL NOT NULL,
 	Year VARCHAR,
 	Won Boolean,
 	PRIMARY KEY(VideoID, AwardID),
-	FOREIGN KEY (VideoID) REFERENCES Video
-	On delete restrict
-	On update cascade,
-	FOREIGN KEY(AwardID) REFERENCES Award
-	On delete restrict
-	On update cascade);
+	FOREIGN KEY (VideoID) REFERENCES Video,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE,
+	FOREIGN KEY(AwardID) REFERENCES Award,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
 CREATE TABLE VideoStar(
-	VideoID Integer,
-	ActorID Integer,
+	VideoID SERIAL NOT NULL,
+	ActorID SERIAL NOT NULL,
 	Rolename VARCHAR,
-	FOREIGN KEY(VideoID) REFERENCES Video
-	On delete restrict
-	On update cascade,
-	FOREIGN KEY(ActorID) REFERENCES Actor
-	On delete restrict
-	On update cascade);
+	PRIMARY KEY(VideoID, ActorID),
+	FOREIGN KEY(VideoID) REFERENCES Video,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE,
+	FOREIGN KEY(ActorID) REFERENCES Actor,
+	ON DELETE RESTRICT,
+	ON UPDATE CASCADE);
 
 
 insert into member values (10001, 'Chuck', 'Ravary', 'chuckster@gmail.com', 'hello123');
@@ -170,7 +172,7 @@ insert into member values (10002, 'Gerald', 'Meunier', 'cheeboi@gmail.com', 'ret
 insert into member values (10003, 'Paul', 'Buisson', 'biglpce@gmail.com', 'leet1337');
 insert into member values (10004, 'Susan', 'Bigelow', 'Sussiiea@gmail.com', 'abc123a');
 insert into member values (10005, 'Ann', 'Bigras', 'saucea@gmail.com', 'freakema');
-insert into member values (10006, 'Joe', 'Petitroux', 'hockeylova@gmail.com', 'hockeyfan12');
+insert into member values (10006, 'Joe', 'Petitroux', 'hocKEYlova@gmail.com', 'hocKEYfan12');
 insert into member values (10007, 'Nick', 'Douglas', 'maneaua@gmail.com', 'iloveabc6');
 insert into member values (10008, 'Mohammed', 'Mickleson', 'screene@gmail.com', 'mouse3123');
 insert into member values (10009, 'Sarah', 'Woods', 'ilovetoscream@gmail.com', 'cordonbleu1');
@@ -181,7 +183,7 @@ insert into member values (10013, 'Alexandre', 'Desharnais', 'heyijustmetyou@gma
 insert into member values (10014, 'Alexander', 'Kovalev', 'heresmynumber@gmail.com', 'callmemaybe');
 insert into member values (10015, 'Guillaume', 'Koivu', 'beforeyoucame@gmail.com', 'intomylife');
 insert into member values (10016, 'Antoine', 'Gionta', 'imissedyou@gmail.com', 'sosobad');
-insert into member values (10017, 'Lebron', 'Bergeron', 'youtookmylife@gmail.com', 'butilltakeyourstoo');
+insert into member values (10017, 'Lebron', 'Bergeron', 'youtookmylife@gmail.com', 'butilltaKEYourstoo');
 insert into member values (10018, 'James', 'Rask', 'youbettabewatchin@gmail.com', 'causeillcomethrough');
 insert into member values (10019, 'Cedric', 'Marchand', 'bruinsalldaway@gmail.com', 'ilovechara12');
 insert into member values (10020, 'Stacy', 'Bourque', 'smellslikevictory@gmail.com', 'cheeboi1235');

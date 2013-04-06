@@ -15,4 +15,4 @@
 </form>
 <br/>
 <br/>
-<p>Jordan Bussanich - 6306357, Charles Ravary - 5181279<br/><br/>Tested on Google Chrome (Latest Version), Internet Explorer 10 (Windows 8, should work on Windows 7 as well) and BlackBerry Browser (OS 7.1 and OS 6.0)</p>
+<p>Jordan Bussanich - 6306357, Charles Ravary - 5181279<br/><br/>Tested on Google Chrome (Latest Version), Internet Explorer 10/9/8/7 (Windows 8, should work on Windows 7/Vista/XP as well) and BlackBerry Browser (OS 7.1 and OS 6.0)</p>
