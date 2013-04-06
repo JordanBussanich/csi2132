@@ -1,0 +1,3 @@
+SELECT V.VideoID, V.Name, V.Salesprice, V.Genre, V.Rating, V.InStock, V.Year, V.Duration
+FROM Director D, Video V
+WHERE D.DirectorID = V.DirectorID AND V.Name = <JSP Dropdown List here>'';
