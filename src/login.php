@@ -33,7 +33,7 @@ if($email&&$password)
 	else
 	{
 		// Set the session variable to the member number
-		$_SESSION['memberNumber'] = $result;
+		$_SESSION['memnum'] = $result;
 		
 		// Redirect to the member's home page
 		header('Location: member.php');
