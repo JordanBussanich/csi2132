@@ -1,30 +1,31 @@
 <?php
-/*****************************************************************************************
-login.php                                   Hayward Peirce
-This file contains the login code
-******************************************************************************************/
+/*
+ *	Allows users to log in.
+ */
 
 
 //start the users login session
 session_start();
 
 //get the enetered login credentials from the form on index.php
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
 //if the user has inputted both a username and password
-if($username&&$password){
-	//include the nessisary hosting SQL info
+if($email&&$password)
+{
+	// Get the SQL server variables
 	include ("config.php");
-	//connect to the peirce.me server, else the page dies with a counldn't connect message
-	$connect= mysql_connect($host, $user, $pass) or die("couldn't connect to server");
-	//connect to the a8341597_AVA database which contains the user credentials
-	mysql_select_db($db) or die("couldnt find DB");
-	//query the server getting all users login info
-	$query= mysql_query("SELECT * FROM users WHERE username='$username'");
+
+	// Attempt to connect
+	$connect = pg_connect($connection) or die("Could not connect to SQL server");
+
+	// Attempt to login
+	$query = mysql_query("SELECT * FROM users WHERE username='$username'");
 	$numrows= mysql_num_rows($query);
 	//if there are users in the database
-	if($numrows!=0){
+	if($numrows!=0)
+	{
 		//while array row = the assosiative array from the query
 		while($row = mysql_fetch_assoc($query)){
 			//set the database set of login credentials
