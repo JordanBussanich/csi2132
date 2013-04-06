@@ -7,7 +7,7 @@
 //start the users login session
 session_start();
 
-//get the enetered login credentials from the form on index.php
+// Get the email and password (from index.php)
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -18,11 +18,11 @@ if($email&&$password)
 	include ("config.php");
 
 	// Attempt to connect
-	$connect = pg_connect($connection) or die("Could not connect to SQL server");
+	$connect = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
 
 	// Attempt to login
-	$hashpass = md5($password);		// May need to change this to not use a hash
-	$query = "SELECT m.MemberNumber FROM Member m WHERE m.email = '$email' AND m.password = '$hashpass'";
+	//$hashpass = md5($password);		// May need to change this to not use a hash
+	$query = "SELECT m.MemberNumber FROM Member m WHERE m.email = '$email' AND m.password = '$password'";
 	
 	$result = pg_query($query);
 	
