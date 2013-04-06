@@ -6,8 +6,10 @@
 	password VARCHAR,
 	PRIMARY KEY(MemberNumber));
 
+ALTER SEQUENCE member_membernumber_seq RESTART WITH 10000;
+
 CREATE TABLE Actor(
-	ActorID SERIAL,
+	ActorID INTEGER,
 	Lastname VARCHAR NOT NULL,
 	Firstname VARCHAR NOT NULL,
 	Date_of_birth DATE,
@@ -21,7 +23,7 @@ CREATE TABLE Card(
 	PRIMARY KEY(CardNumber));
 
 CREATE TABLE BillingInformation (
-	MemberNumber SERIAL NOT NULL,
+	MemberNumber INTEGER NOT NULL,
 	CardNumber INTEGER,
 	Type VARCHAR,
 	PRIMARY KEY(MemberNumber),
@@ -30,8 +32,8 @@ CREATE TABLE BillingInformation (
 	ON UPDATE CASCADE);
 
 CREATE TABLE BillingAddress(
-	BAddresID SERIAL,
-	MemberNumber SERIAL NOT NULL,
+	BAddresID INTEGER,
+	MemberNumber INTEGER NOT NULL,
 	address1 VARCHAR,
 	address2 VARCHAR,
 	city VARCHAR,
@@ -43,8 +45,8 @@ CREATE TABLE BillingAddress(
 	ON DELETE RESTRICT);
 
 CREATE TABLE ShippingAddress(
-	SAddresID SERIAL,
-	MemberNumber SERIAL NOT NULL,
+	SAddresID INTEGER,
+	MemberNumber INTEGER NOT NULL,
 	address1 VARCHAR,
 	address2 VARCHAR,
 	city VARCHAR,
@@ -56,20 +58,20 @@ CREATE TABLE ShippingAddress(
 	ON DELETE RESTRICT);
 
 CREATE TABLE Director(
-	DirectorID SERIAL,
+	DirectorID INTEGER,
 	Lastname VARCHAR,
 	Firstname VARCHAR,
 	Date_of_birth DATE,
 	PRIMARY KEY(DirectorID));
 
 CREATE TABLE Award(
-	AwardID SERIAL,
+	AwardID INTEGER,
 	Year VARCHAR,
 	Category VARCHAR,
 	PRIMARY KEY(AwardID));
 
 CREATE TABLE Video(
-	VideoID SERIAL,
+	VideoID INTEGER,
 	Name VARCHAR,
 	Salesprice NUMERIC (8,2),
 	Genre VARCHAR,
@@ -84,8 +86,8 @@ CREATE TABLE Video(
 	ON DELETE RESTRICT);
 
 CREATE TABLE Purchase(
-	InvoiceNumber SERIAL,
-	MemberNumber INTEGER,
+	InvoiceNumber INTEGER,
+	MemberNumber INTEGER NOT NULL,
 	VideoID INTEGER,
 	date_ordered DATE,
 	date_shipped DATE,
@@ -101,9 +103,9 @@ CREATE TABLE Purchase(
 	ON UPDATE CASCADE);
 
 CREATE TABLE Basket(
-	InvoiceNumber SERIAL NOT NULL,
+	InvoiceNumber INTEGER NOT NULL,
 	VideoID INTEGER,
-	Basket_id SERIAL,
+	Basket_id INTEGER,
 	PRIMARY KEY(Basket_id),
 	FOREIGN KEY(InvoiceNumber) REFERENCES Purchase
 	ON DELETE RESTRICT
@@ -114,7 +116,7 @@ CREATE TABLE Basket(
 
 CREATE TABLE Returns(
 	InvoiceNumber INTEGER,
-	MemberNumber INTEGER,
+	MemberNumber INTEGER NOT NULL,
 	VideoID INTEGER,
 	Negative_sales Numeric(8,2),
 	PRIMARY KEY(InvoiceNumber, VideoID),
@@ -126,8 +128,8 @@ CREATE TABLE Returns(
 	ON UPDATE CASCADE);
 	
 CREATE TABLE Download(
-	MemberNumber SERIAL NOT NULL,
-	VideoID SERIAL NOT NULL,
+	MemberNumber INTEGER NOT NULL,
+	VideoID INTEGER,
 	Date DATE,
 	Time TIME,
 	Fee FLOAT,
@@ -140,8 +142,8 @@ CREATE TABLE Download(
 	ON UPDATE CASCADE);
 
 CREATE TABLE VideoAwards(
-	VideoID SERIAL NOT NULL,
-	AwardID SERIAL NOT NULL,
+	VideoID INTEGER,
+	AwardID INTEGER,
 	Year VARCHAR,
 	Won Boolean,
 	PRIMARY KEY(VideoID, AwardID),
@@ -153,8 +155,8 @@ CREATE TABLE VideoAwards(
 	ON UPDATE CASCADE);
 
 CREATE TABLE VideoStar(
-	VideoID SERIAL NOT NULL,
-	ActorID SERIAL NOT NULL,
+	VideoID INTEGER,
+	ActorID INTEGER,
 	Rolename VARCHAR,
 	PRIMARY KEY(VideoID, ActorID),
 	FOREIGN KEY(VideoID) REFERENCES Video

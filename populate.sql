@@ -1,35 +1,35 @@
-
-
-insert into member values (10001, 'Chuck', 'Ravary', 'chuckster@gmail.com', 'hello123');
-insert into member values (10002, 'Gerald', 'Meunier', 'cheeboi@gmail.com', 'retroboi22');
-insert into member values (10003, 'Paul', 'Buisson', 'biglpce@gmail.com', 'leet1337');
-insert into member values (10004, 'Susan', 'Bigelow', 'Sussiiea@gmail.com', 'abc123a');
-insert into member values (10005, 'Ann', 'Bigras', 'saucea@gmail.com', 'freakema');
-insert into member values (10006, 'Joe', 'Petitroux', 'hocKEYlova@gmail.com', 'hocKEYfan12');
-insert into member values (10007, 'Nick', 'Douglas', 'maneaua@gmail.com', 'iloveabc6');
-insert into member values (10008, 'Mohammed', 'Mickleson', 'screene@gmail.com', 'mouse3123');
-insert into member values (10009, 'Sarah', 'Woods', 'ilovetoscream@gmail.com', 'cordonbleu1');
-insert into member values (10010, 'Veronique', 'Seguin', 'paperaf@gmail.com', 'soiwaslikechee');
-insert into member values (10011, 'Vanessa', 'Chara', 'sauce123@gmail.com', 'hotbbqsauce');
-insert into member values (10012, 'Tatianna', 'Pleakanec', 'habslova@gmail.com', 'stanleycupwinner');
-insert into member values (10013, 'Alexandre', 'Desharnais', 'heyijustmetyou@gmail.com', 'andthisiscrazy');
-insert into member values (10014, 'Alexander', 'Kovalev', 'heresmynumber@gmail.com', 'callmemaybe');
-insert into member values (10015, 'Guillaume', 'Koivu', 'beforeyoucame@gmail.com', 'intomylife');
-insert into member values (10016, 'Antoine', 'Gionta', 'imissedyou@gmail.com', 'sosobad');
-insert into member values (10017, 'Lebron', 'Bergeron', 'youtookmylife@gmail.com', 'butilltaKEYourstoo');
-insert into member values (10018, 'James', 'Rask', 'youbettabewatchin@gmail.com', 'causeillcomethrough');
-insert into member values (10019, 'Cedric', 'Marchand', 'bruinsalldaway@gmail.com', 'ilovechara12');
-insert into member values (10020, 'Stacy', 'Bourque', 'smellslikevictory@gmail.com', 'cheeboi1235');
-insert into member values (10021, 'Katrina', 'Peverley', 'lesrounesdebwoi@gmail.com', 'jaimelepoulet');
-insert into member values (10022, 'Sue', 'Jagr', 'ikindaforgot@gmail.com', 'whatiate');
-insert into member values (10023, 'Kat', 'DeLuna', 'fordinnerlast@gmail.com', 'night897');
-insert into member values (10024, 'Jesse', 'Moutier', 'ineedtobegetting@gmail.com', 'onmyway974');
-insert into member values (10025, 'Mathieu', 'Champagne', 'becauseiammillions@gmail.com', 'milesaway32');
-insert into member values (10026, 'Nicolas', 'Leroux', 'fromyoutoacheive@gmail.com', 'butillbethereforyou1234');
-insert into member values (10027, 'Pascal', 'Dupuis', 'icantake@gmail.com', 'dell125');
-insert into member values (10028, 'Candy', 'Lebrun', 'idontlikealienware@gmail.com', 'hopeyouagreewithme65');
-insert into member values (10029, 'Noemie', 'Schmidel', 'ihavenomore@gmail.com', 'ideastoputfor');
-insert into member values (10030, 'Joey', 'Larocque', 'thisdatabase@gmail.com', 'fillingallmyimagination');
+﻿
+insert into member values (DEFAULT, 'Jordan', 'Bussanich', 'jordan.bussanich@gmail.com', 'thisisapassword');
+insert into member values (DEFAULT, 'Chuck', 'Ravary', 'chuckster@gmail.com', 'hello123');
+insert into member values (DEFAULT, 'Gerald', 'Meunier', 'cheeboi@gmail.com', 'retroboi22');
+insert into member values (DEFAULT, 'Paul', 'Buisson', 'biglpce@gmail.com', 'leet1337');
+insert into member values (DEFAULT, 'Susan', 'Bigelow', 'Sussiiea@gmail.com', 'abc123a');
+insert into member values (DEFAULT, 'Ann', 'Bigras', 'saucea@gmail.com', 'freakema');
+insert into member values (DEFAULT, 'Joe', 'Petitroux', 'hocKEYlova@gmail.com', 'hocKEYfan12');
+insert into member values (DEFAULT, 'Nick', 'Douglas', 'maneaua@gmail.com', 'iloveabc6');
+insert into member values (DEFAULT, 'Mohammed', 'Mickleson', 'screene@gmail.com', 'mouse3123');
+insert into member values (DEFAULT, 'Sarah', 'Woods', 'ilovetoscream@gmail.com', 'cordonbleu1');
+insert into member values (DEFAULT, 'Veronique', 'Seguin', 'paperaf@gmail.com', 'soiwaslikechee');
+insert into member values (DEFAULT, 'Vanessa', 'Chara', 'sauce123@gmail.com', 'hotbbqsauce');
+insert into member values (DEFAULT, 'Tatianna', 'Pleakanec', 'habslova@gmail.com', 'stanleycupwinner');
+insert into member values (DEFAULT, 'Alexandre', 'Desharnais', 'heyijustmetyou@gmail.com', 'andthisiscrazy');
+insert into member values (DEFAULT, 'Alexander', 'Kovalev', 'heresmynumber@gmail.com', 'callmemaybe');
+insert into member values (DEFAULT, 'Guillaume', 'Koivu', 'beforeyoucame@gmail.com', 'intomylife');
+insert into member values (DEFAULT, 'Antoine', 'Gionta', 'imissedyou@gmail.com', 'sosobad');
+insert into member values (DEFAULT, 'Lebron', 'Bergeron', 'youtookmylife@gmail.com', 'butilltaKEYourstoo');
+insert into member values (DEFAULT, 'James', 'Rask', 'youbettabewatchin@gmail.com', 'causeillcomethrough');
+insert into member values (DEFAULT, 'Cedric', 'Marchand', 'bruinsalldaway@gmail.com', 'ilovechara12');
+insert into member values (DEFAULT, 'Stacy', 'Bourque', 'smellslikevictory@gmail.com', 'cheeboi1235');
+insert into member values (DEFAULT, 'Katrina', 'Peverley', 'lesrounesdebwoi@gmail.com', 'jaimelepoulet');
+insert into member values (DEFAULT, 'Sue', 'Jagr', 'ikindaforgot@gmail.com', 'whatiate');
+insert into member values (DEFAULT, 'Kat', 'DeLuna', 'fordinnerlast@gmail.com', 'night897');
+insert into member values (DEFAULT, 'Jesse', 'Moutier', 'ineedtobegetting@gmail.com', 'onmyway974');
+insert into member values (DEFAULT, 'Mathieu', 'Champagne', 'becauseiammillions@gmail.com', 'milesaway32');
+insert into member values (DEFAULT, 'Nicolas', 'Leroux', 'fromyoutoacheive@gmail.com', 'butillbethereforyou1234');
+insert into member values (DEFAULT, 'Pascal', 'Dupuis', 'icantake@gmail.com', 'dell125');
+insert into member values (DEFAULT, 'Candy', 'Lebrun', 'idontlikealienware@gmail.com', 'hopeyouagreewithme65');
+insert into member values (DEFAULT, 'Noemie', 'Schmidel', 'ihavenomore@gmail.com', 'ideastoputfor');
+insert into member values (DEFAULT, 'Joey', 'Larocque', 'thisdatabase@gmail.com', 'fillingallmyimagination');
 
 
 insert into director values(101, 'Spielberg', 'Steven', '1946-12-18');
@@ -402,45 +402,37 @@ insert into purchase values(00001, 10001, 000009,  '19-03-12', '20-03-12', 5.99,
 insert into purchase values(00002, 10001, 000013,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
 
 insert into basket values(00001, 000009, 0001);
-insert into basket values(00002, 000013, 0001);
 
 insert into purchase values(00003, 10002, 000025,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
 insert into purchase values(00004, 10002, 000021,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
 
 insert into basket values(00003, 000025, 0002);
-insert into basket values(00004, 000021, 0002);
 
 insert into purchase values(00005, 10003, 000015,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 insert into purchase values(00006, 10003, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 
 insert into basket values(00005, 000015, 0003);
-insert into basket values(00006, 000013, 0003);
 
 insert into purchase values(00007, 10004, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 insert into purchase values(00008, 10004, 000012,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 
 insert into basket values(00007, 000013, 0004);
-insert into basket values(00008, 000012, 0004);
 
 insert into purchase values(00009, 10005, 000014,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
 insert into purchase values(00010, 10005, 000016,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
 
 insert into basket values(00009, 000014, 0005);
-insert into basket values(00010, 000016, 0005);
 
 insert into purchase values(00011, 10006, 000001,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
 insert into purchase values(00012, 10006, 000021,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
 
 insert into basket values(00011, 000001, 0006);
-insert into basket values(00012, 000021, 0006);
 
 insert into purchase values(00013, 10007, 000002,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
 insert into purchase values(00014, 10007, 000021,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
 insert into purchase values(00015, 10007, 000003,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
 
 insert into basket values(00013, 000002, 0007);
-insert into basket values(00014, 000021, 0007);
-insert into basket values(00015, 000003, 0007);
 
 insert into purchase values(00016, 10008, 000006,  '27-03-12', '28-03-12', 6.99, 4, 'Purolator');
 
@@ -450,103 +442,86 @@ insert into purchase values(00017, 10009, 000014,  '27-03-12', '28-03-12', 4.99,
 insert into purchase values(00018, 10009, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
 insert into basket values(00017, 000014, 0009);
-insert into basket values(00018, 000015, 0009);
 
 insert into purchase values(00019, 10010, 000021,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
 insert into purchase values(00020, 10010, 000005,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
 
 insert into basket values(00019, 000005, 0010);
-insert into basket values(00020, 000021, 0010);
 
 insert into purchase values(00021, 10011, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
 insert into purchase values(00022, 10011, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
 insert into basket values(00021, 000014, 0011);
-insert into basket values(00022, 000015, 0011);
 
 insert into purchase values(00023, 10012, 000024,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
 insert into purchase values(00024, 10012, 000015,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
 
 insert into basket values(00023, 000024, 0012);
-insert into basket values(00024, 000015, 0012);
 
 insert into purchase values(00025, 10013, 000014,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
 insert into purchase values(00026, 10013, 000026,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
 insert into basket values(00025, 000014, 0013);
-insert into basket values(00026, 000026, 0013);
 
 insert into purchase values(000027, 10014, 000012,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
 insert into purchase values(000028, 10015, 000006,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
 
 insert into basket values(00027, 000014, 0014);
-insert into basket values(00028, 000015, 0014);
 
 insert into purchase values(00029, 10015, 000009,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
 insert into purchase values(00030, 10015, 000008,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
 
 insert into basket values(00029, 000009, 0015);
-insert into basket values(00030, 000008, 0015);
 
 insert into purchase values(00031, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 insert into purchase values(00032, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 
 insert into basket values(00031, 000008, 0016);
-insert into basket values(00032, 000007, 0016);
 
 insert into purchase values(00033, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 insert into purchase values(00034, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 
 insert into basket values(00033, 000008, 0017);
-insert into basket values(00034, 000007, 0017);
 
 insert into purchase values(00035, 10017, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 insert into purchase values(00036, 10017, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
 
 insert into basket values(00035, 000008, 0018);
-insert into basket values(00036, 000007, 0018);
 
 insert into purchase values(00037, 10018, 000010,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
 insert into purchase values(00038, 10018, 000011,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
 
 insert into basket values(00037, 000010, 0019);
-insert into basket values(00038, 000011, 0019);
 
 insert into purchase values(00039, 10019, 000009,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
 insert into purchase values(00040, 10019, 000007,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
 
 insert into basket values(00039, 000009, 0020);
-insert into basket values(00040, 000007, 0020);
 
 insert into purchase values(00041, 10020, 000008,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
 insert into purchase values(00042, 10020, 000006,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
 
 insert into basket values(00041, 000008, 0021);
-insert into basket values(00042, 000006, 0021);
 
 insert into purchase values(00043, 10021, 000005,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
 insert into purchase values(00044, 10021, 000008,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
 
 insert into basket values(00043, 000005, 0022);
-insert into basket values(00044, 000008, 0022);
 
 insert into purchase values(00045, 10022, 000005,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
 insert into purchase values(00046, 10022, 000009,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
 
 insert into basket values(00045, 000005, 0023);
-insert into basket values(00046, 000009, 0023);
 
 insert into purchase values(00047, 10023, 000022,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
 insert into purchase values(00048, 10023, 000023,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
 
 insert into basket values(00047, 000022, 0024);
-insert into basket values(00048, 000023, 0024);
 
 insert into purchase values(00049, 10024, 000021,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
 insert into purchase values(00050, 10024, 000020,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
 
 insert into basket values(00049, 000021, 0025);
-insert into basket values(00050, 000020, 0025);
 
 insert into returns values(00016, 10008, 000006, 16.99);
 insert into returns values(00021, 10011, 000014, 12.99);
