@@ -639,4 +639,35 @@ insert into videoawards values(000029, 1023, 1998, true);
 insert into videoawards values(000030, 1001, 2004, true);
 insert into videoawards values(000030, 1002, 2004, true);
 
+insert into Billinginformation values(10001, 4950213226542654, 'Visa');
+insert into Billinginformation values(10002, 4955516516156156, 'Visa');
+insert into Billinginformation values(10003, 4549515165418989, 'Visa');
+insert into Billinginformation values(10004, 2315641988484998, 'Visa');
+insert into Billinginformation values(10005, 2135641894984898, 'Visa');
+insert into Billinginformation values(10006, 8749481981891815, 'Visa');
+insert into Billinginformation values(10007, 2123598894849845, 'Visa');
+insert into Billinginformation values(10008, 2315648948941818, 'Visa');
+insert into Billinginformation values(10009, 2135498494948422, 'Visa');
+insert into Billinginformation values(10010, 1859489489189189, 'Visa');
 
+insert into Billinginformation values(10011, 1815619881251689, 'MasterCard');
+insert into Billinginformation values(10012, 2566156456448465, 'MasterCard');
+insert into Billinginformation values(10013, 5645412645645656, 'MasterCard');
+insert into Billinginformation values(10014, 2345489489256521, 'MasterCard');
+insert into Billinginformation values(10015, 1235494898126215, 'MasterCard');
+insert into Billinginformation values(10016, 4568912185961852, 'MasterCard');
+insert into Billinginformation values(10017, 1235641849815645, 'MasterCard');
+insert into Billinginformation values(10018, 4568991231565445, 'MasterCard');
+insert into Billinginformation values(10019, 2315496484984848, 'MasterCard');
+insert into Billinginformation values(10020, 2354984912589454, 'MasterCard');
+
+insert into Billinginformation values(10021, 5465961918918194, 'American Express');
+insert into Billinginformation values(10022, 5541619618511232, 'American Express');
+insert into Billinginformation values(10023, 1561826852135152, 'American Express');
+insert into Billinginformation values(10024, 1451562892899641, 'American Express');
+insert into Billinginformation values(10025, 1235419485948565, 'American Express');
+insert into Billinginformation values(10026, 3458945256569852, 'American Express');
+insert into Billinginformation values(10027, 4568945666854196, 'American Express');
+insert into Billinginformation values(10028, 4568949812135642, 'American Express');
+insert into Billinginformation values(10029, 1235496845216189, 'American Express');
+insert into Billinginformation values(10030, 1235641894189192, 'American Express');
