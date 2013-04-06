@@ -36,7 +36,7 @@ $scity = strip_tags( @$_POST['scity']);
 $spostcode = strip_tags( @ $_POST['spostcode']);
 $sphone = strip_tags( @ $_POST['sphone']);
 
-//when submited
+// When submitted
 if($submit)
 {
 	
@@ -96,7 +96,6 @@ if($submit)
 		{
 			echo 'Error: Passwords do not match.';
 		}
-		
 	}
 	else
 	{
