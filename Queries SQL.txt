@@ -1,3 +1,13 @@
 SELECT V.VideoID, V.Name, V.Salesprice, V.Genre, V.Rating, V.InStock, V.Year, V.Duration
 FROM Director D, Video V
-WHERE D.DirectorID = V.DirectorID AND V.Name = <JSP Dropdown List here>'';
+WHERE D.DirectorID = V.DirectorID AND V.Name = <JSP Dropdown List here>;
+
+SELECT V.Genre, V.Name, D.Date, P.date_ordered
+FROM Video V, Download D, Purchase P
+WHERE V.Genre = <JSP List here> AND V.VideoID = D.VideoID AND P.VideoID = V.VideoID AND P.date_ordered > ALL (SELECT P2.Date_ordered
+  												FROM Purchase P2, Video V2, Download D2
+													WHERE P2.VideoID = V2.VideoID AND D2.VideoID = V2.VideoID AND P2.Date_ordered > ALL (SELECT D3.Date
+																					FROM Purchase P3, Video V3, Download D3
+SELECT S.address1, B.MemberNumber, B.CardNumber, B.Type
+FROM ShippingAddress S, Billinginformation B, Member M
+WHERE M.Membernumber = <JSP List here> AND  M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;	
