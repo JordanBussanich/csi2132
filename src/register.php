@@ -84,6 +84,95 @@
 ?>
 <form action="register.php" method="post">
 	<br />
+	<h1>Register</h1>
+	<h2>User Information</h2>
+	<table border="1" bordercolor="#000000" style="background-color:#FFFFFF" width="40%" cellpadding="1" cellspacing="3">
+	<tr>
+		<td>First Name</td>
+		<td><input type="text" name="firstname" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Last Name</td>
+		<td><input type="text" name="lastname" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="email" name="email" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Repeat Password</td>
+		<td><input type="password" name="repeat" size="40%"></td>
+	</tr>
+	</table>
+	<br/>
+	<h2>Card Information</h2>
+	<table border="1" bordercolor="#000000" style="background-color:#FFFFFF" width="40%" cellpadding="1" cellspacing="3">
+	<tr>
+		<td>Card Type</td>
+		<td><form><input type="radio" name="card" value="visa">Visa <input type="radio" name="card" value="mc">MasterCard <br/><input type="radio" name="card" value="amex">American Express <br/><input type="radio" name="card" value="discover">Discover</form></td>
+	</tr>
+	<tr>
+		<td>Card Number</td>
+		<td><input type="text" name="number" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Expiration Date (MM/YY)</td>
+		<td><input type="text" name="expdate" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Name on Card</td>
+		<td><input type="text" name="namecard" size="40%"></</td>
+	</tr>
+	</table>
+	<br/>
+	<h2>Billing Information</h2>
+	<table border="1" bordercolor="#000000" style="background-color:#FFFFFF" width="40%" cellpadding="1" cellspacing="3">
+	<tr>
+		<td>Address</td>
+		<td><input type="text" name="address" size="40%"></td>
+	</tr>
+	<tr>
+		<td>City</td>
+		<td><input type="text" name="city" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Post Code</td>
+		<td><input type="text" name="postcode" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Phone Number</td>
+		<td><input type="text" name="phone" size="40%"></td>
+	</tr>
+	</table>
+		<br/>
+	<h2>Shipping Information</h2>
+	<table border="1" bordercolor="#000000" style="background-color:#FFFFFF" width="40%" cellpadding="1" cellspacing="3">
+	<tr>
+		<td>Address</td>
+		<td><input type="text" name="saddress" size="40%"></td>
+	</tr>
+	<tr>
+		<td>City</td>
+		<td><input type="text" name="scity" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Post Code</td>
+		<td><input type="text" name="spostcode" size="40%"></td>
+	</tr>
+	<tr>
+		<td>Phone Number</td>
+		<td><input type="text" name="sphone" size="40%"></td>
+	</tr>
+	</table>
+	
+</form>
+
+	
+	
 	
 	<table>
 		<tr>
