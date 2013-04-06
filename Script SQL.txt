@@ -1,4 +1,4 @@
-set search_path = 'test2'
+set search_path = 'projectcsi2132'
 
 CREATE TABLE Member (
 	MemberNumber Integer UNIQUE NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE Award(
 	AwardID Integer NOT NULL,
 	Year VARCHAR,
 	Category VARCHAR,
-	PRIMARY KEY(AwardID, Year));
+	PRIMARY KEY(AwardID));
 
 CREATE TABLE Video(
 	VideoID INTEGER UNIQUE NOT NULL,
@@ -94,14 +94,24 @@ CREATE TABLE Purchase(
 	shipping_cost FLOAT,
 	speed Integer,
 	carrier VARCHAR,
-	Primary key (InvoiceNumber),
+	Primary key(InvoiceNumber),
 	FOREIGN KEY (MemberNumber) REFERENCES Member
 	On delete restrict
 	On update cascade,
 	FOREIGN KEY (VideoID) REFERENCES Video
 	On delete restrict
 	On update cascade);
-	
+
+Create Table Basket(
+	InvoiceNumber Integer,
+	VideoID Integer,
+	Basket_id Integer,
+	Foreign key(InvoiceNumber) references purchase
+	On delete restrict
+	On update cascade,
+	Foreign key(VideoID) references Video
+	On delete restrict
+	On update cascade);
 
 CREATE TABLE Returns(
 	InvoiceNumber Integer,
@@ -109,9 +119,6 @@ CREATE TABLE Returns(
 	VideoID Integer,
 	Negative_sales Numeric(8,2),
 	Primary key(InvoiceNumber, VideoID),
-	Foreign key (InvoiceNumber) references Purchase
-	On delete restrict
-	On update cascade,
 	Foreign key(VideoID) references Video
 	On delete restrict
 	On update cascade,
@@ -138,11 +145,11 @@ CREATE TABLE VideoAwards(
 	AwardID Integer,
 	Year VARCHAR,
 	Won Boolean,
-	PRIMARY KEY(VideoID, AwardID, Year),
+	PRIMARY KEY(VideoID, AwardID),
 	FOREIGN KEY (VideoID) REFERENCES Video
 	On delete restrict
 	On update cascade,
-	FOREIGN KEY(AwardID, YEAR) REFERENCES Award
+	FOREIGN KEY(AwardID) REFERENCES Award
 	On delete restrict
 	On update cascade);
 
@@ -557,110 +564,182 @@ insert into billingaddress values(1030, 10030, '876 Lyon', '', 'Ottawa', '613-32
 insert into shippingaddress values(1030, 10030, '876 Lyon', '', 'Ottawa', '613-324-4656', 'P1M 2D9');
 
 insert into purchase values(00001, 10001, 000009,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
-insert into purchase values(00001, 10001, 000013,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
+insert into purchase values(00002, 10001, 000013,  '19-03-12', '20-03-12', 5.99, 3, 'Fed-Ex');
 
-insert into purchase values(00002, 10002, 000025,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
-insert into purchase values(00002, 10002, 000021,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
+insert into basket values(00001, 000009, 0001);
+insert into basket values(00002, 000013, 0001);
 
-insert into purchase values(00003, 10003, 000015,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
-insert into purchase values(00003, 10003, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into purchase values(00003, 10002, 000025,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
+insert into purchase values(00004, 10002, 000021,  '20-03-12', '20-03-12', 4.99, 3, 'Fed-Ex');
 
-insert into purchase values(00004, 10004, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
-insert into purchase values(00004, 10004, 000012,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into basket values(00003, 000025, 0002);
+insert into basket values(00004, 000021, 0002);
 
-insert into purchase values(00005, 10005, 000011,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
-insert into purchase values(00005, 10005, 000011,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
+insert into purchase values(00005, 10003, 000015,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into purchase values(00006, 10003, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 
-insert into purchase values(00006, 10006, 000001,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
-insert into purchase values(00006, 10006, 000021,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
+insert into basket values(00005, 000015, 0003);
+insert into basket values(00006, 000013, 0003);
 
-insert into purchase values(00007, 10007, 000002,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
-insert into purchase values(00007, 10007, 000021,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
-insert into purchase values(00007, 10007, 000003,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+insert into purchase values(00007, 10004, 000013,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
+insert into purchase values(00008, 10004, 000012,  '21-03-12', '21-03-12', 4.99, 2, 'Fed-Ex');
 
-insert into purchase values(00008, 10008, 000006,  '27-03-12', '28-03-12', 6.99, 4, 'Purolator');
+insert into basket values(00007, 000013, 0004);
+insert into basket values(00008, 000012, 0004);
 
-insert into purchase values(00009, 10009, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
-insert into purchase values(00009, 10009, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00009, 10005, 000014,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
+insert into purchase values(00010, 10005, 000016,  '22-03-12', '23-03-12', 3.99, 2, 'Purolator');
 
-insert into purchase values(00010, 10010, 000021,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
-insert into purchase values(00010, 10010, 000005,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
+insert into basket values(00009, 000014, 0005);
+insert into basket values(00010, 000016, 0005);
 
-insert into purchase values(00011, 10011, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
-insert into purchase values(00011, 10011, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00011, 10006, 000001,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
+insert into purchase values(00012, 10006, 000021,  '22-03-12', '23-03-12', 6.99, 2, 'Purolator');
 
-insert into purchase values(00012, 10012, 000024,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
-insert into purchase values(00012, 10012, 000015,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
+insert into basket values(00011, 000001, 0006);
+insert into basket values(00012, 000021, 0006);
 
-insert into purchase values(00013, 10013, 000014,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
-insert into purchase values(00013, 10013, 000026,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00013, 10007, 000002,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+insert into purchase values(00014, 10007, 000021,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
+insert into purchase values(00015, 10007, 000003,  '23-03-12', '23-03-12', 5.99, 2, 'Purolator');
 
-insert into purchase values(000014, 10014, 000012,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
-insert into purchase values(000014, 10014, 000006,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
+insert into basket values(00013, 000002, 0007);
+insert into basket values(00014, 000021, 0007);
+insert into basket values(00015, 000003, 0007);
 
-insert into purchase values(00015, 10015, 000009,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
-insert into purchase values(00015, 10015, 000008,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00016, 10008, 000006,  '27-03-12', '28-03-12', 6.99, 4, 'Purolator');
 
-insert into purchase values(00016, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
-insert into purchase values(00016, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into basket values(00016, 000006, 0008);
 
-insert into purchase values(00016, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
-insert into purchase values(00016, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00017, 10009, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00018, 10009, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
-insert into purchase values(00017, 10017, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
-insert into purchase values(00017, 10017, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into basket values(00017, 000014, 0009);
+insert into basket values(00018, 000015, 0009);
 
-insert into purchase values(00018, 10018, 000010,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
-insert into purchase values(00018, 10018, 000011,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
+insert into purchase values(00019, 10010, 000021,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
+insert into purchase values(00020, 10010, 000005,  '27-03-12', '28-03-12', 3.99, 2, 'Purolator');
 
-insert into purchase values(00019, 10019, 000009,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
-insert into purchase values(00019, 10019, 000007,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
+insert into basket values(00019, 000005, 0010);
+insert into basket values(00020, 000021, 0010);
 
-insert into purchase values(00020, 10020, 000008,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
-insert into purchase values(00020, 10020, 000006,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
+insert into purchase values(00021, 10011, 000014,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00022, 10011, 000015,  '27-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
-insert into purchase values(00021, 10021, 000005,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
-insert into purchase values(00021, 10021, 000008,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
+insert into basket values(00021, 000014, 0011);
+insert into basket values(00022, 000015, 0011);
 
-insert into purchase values(00022, 10022, 000005,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
-insert into purchase values(00022, 10022, 000009,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
+insert into purchase values(00023, 10012, 000024,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
+insert into purchase values(00024, 10012, 000015,  '27-03-12', '28-03-12', 6.99, 1, 'UPS');
 
-insert into purchase values(00023, 10023, 000022,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
-insert into purchase values(00023, 10023, 000023,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
+insert into basket values(00023, 000024, 0012);
+insert into basket values(00024, 000015, 0012);
 
-insert into purchase values(00024, 10024, 000021,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
-insert into purchase values(00024, 10024, 000020,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
+insert into purchase values(00025, 10013, 000014,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00026, 10013, 000026,  '28-03-12', '28-03-12', 4.99, 2, 'Purolator');
 
-insert into purchase values(00025, 10025, 000030,  '04-04-12', '05-04-12', 6.99, 1, 'UPS');
-insert into purchase values(00025, 10025, 000026,  '04-04-12', '05-04-12', 6.99, 1, 'UPS');
+insert into basket values(00025, 000014, 0013);
+insert into basket values(00026, 000026, 0013);
 
-insert into returns values(00016, 10016, 000007, 16.99);
-insert into returns values(00021, 10021, 000008, 14.99);
-insert into returns values(00024, 10024, 000021, 9.99);
+insert into purchase values(000027, 10014, 000012,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
+insert into purchase values(000028, 10015, 000006,  '28-03-12', '29-03-12', 4.99, 3, 'Fed-Ex');
 
-insert into award values(1001, 1928, 'Best Actor in a leading role');
-insert into award values(1002, 1936, 'Best Actor in a supporting role');
-insert into award values(1003, 1928, 'Best Actress in a leading role');
-insert into award values(1004, 1936, 'Best Actress in a leading role');
-insert into award values(1005, 2001, 'Best animated feature');
-insert into award values(1006, 1931, 'Best Animated short film');
-insert into award values(1007, 1928, 'Best Cinematography');
-insert into award values(1008, 1948, 'Best costume design');
-insert into award values(1009, 1928, 'Best Director');
-insert into award values(1011, 1943, 'Best documentary feature');
-insert into award values(1012, 1941, 'Best documentary short');
-insert into award values(1013, 1935, 'Best film editing');
-insert into award values(1014, 1947, 'Best foreign language film');
-insert into award values(1015, 1931, 'Best makeup and hairstyling');
-insert into award values(1016, 1981, 'Best original score');
-insert into award values(1017, 1934, 'Best original song');
-insert into award values(1018, 1928, 'Best picture');
-insert into award values(1019, 1928, 'Best production design');
-insert into award values(1020, 1963, 'Best sound editing');
-insert into award values(1021, 1930, 'Best sound mixing');
-insert into award values(1022, 1939, 'Best visual effects');
-insert into award values(1023, 1928, 'Best adapted screeplay');
-insert into award values(1024, 1940, 'Best original screenplay');
+insert into basket values(00027, 000014, 0014);
+insert into basket values(00028, 000015, 0014);
+
+insert into purchase values(00029, 10015, 000009,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
+insert into purchase values(00030, 10015, 000008,  '29-03-12', '30-03-12', 4.99, 2, 'Purolator');
+
+insert into basket values(00029, 000009, 0015);
+insert into basket values(00030, 000008, 0015);
+
+insert into purchase values(00031, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00032, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into basket values(00031, 000008, 0016);
+insert into basket values(00032, 000007, 0016);
+
+insert into purchase values(00033, 10016, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00034, 10016, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into basket values(00033, 000008, 0017);
+insert into basket values(00034, 000007, 0017);
+
+insert into purchase values(00035, 10017, 000008,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00036, 10017, 000007,  '01-04-12', '01-04-12', 3.99, 2, 'UPS');
+
+insert into basket values(00035, 000008, 0018);
+insert into basket values(00036, 000007, 0018);
+
+insert into purchase values(00037, 10018, 000010,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
+insert into purchase values(00038, 10018, 000011,  '01-04-12', '02-04-12', 4.99, 1, 'Fed-Ex');
+
+insert into basket values(00037, 000010, 0019);
+insert into basket values(00038, 000011, 0019);
+
+insert into purchase values(00039, 10019, 000009,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
+insert into purchase values(00040, 10019, 000007,  '02-04-12', '02-04-12', 3.99, 2, 'UPS');
+
+insert into basket values(00039, 000009, 0020);
+insert into basket values(00040, 000007, 0020);
+
+insert into purchase values(00041, 10020, 000008,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
+insert into purchase values(00042, 10020, 000006,  '02-04-12', '02-04-12', 4.99, 4, 'UPS');
+
+insert into basket values(00041, 000008, 0021);
+insert into basket values(00042, 000006, 0021);
+
+insert into purchase values(00043, 10021, 000005,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
+insert into purchase values(00044, 10021, 000008,  '02-04-12', '03-04-12', 3.99, 2, 'Purolator');
+
+insert into basket values(00043, 000005, 0022);
+insert into basket values(00044, 000008, 0022);
+
+insert into purchase values(00045, 10022, 000005,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
+insert into purchase values(00046, 10022, 000009,  '02-04-12', '03-04-12', 2.99, 5, 'UPS');
+
+insert into basket values(00045, 000005, 0023);
+insert into basket values(00046, 000009, 0023);
+
+insert into purchase values(00047, 10023, 000022,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
+insert into purchase values(00048, 10023, 000023,  '04-04-12', '05-04-12', 4.99, 2, 'UPS');
+
+insert into basket values(00047, 000022, 0024);
+insert into basket values(00048, 000023, 0024);
+
+insert into purchase values(00049, 10024, 000021,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
+insert into purchase values(00050, 10024, 000020,  '04-04-12', '05-04-12', 4.99, 2, 'Purolator');
+
+insert into basket values(00049, 000021, 0025);
+insert into basket values(00050, 000020, 0025);
+
+insert into returns values(00016, 10008, 000006, 16.99);
+insert into returns values(00021, 10011, 000014, 12.99);
+insert into returns values(00024, 10012, 000015, 13.99);
+
+insert into award values(1001, 'Best Actor in a leading role');
+insert into award values(1002, 'Best Actor in a supporting role');
+insert into award values(1003, 'Best Actress in a leading role');
+insert into award values(1004, 'Best Actress in a leading role');
+insert into award values(1005, 'Best animated feature');
+insert into award values(1006, 'Best Animated short film');
+insert into award values(1007, 'Best Cinematography');
+insert into award values(1008, 'Best costume design');
+insert into award values(1009, 'Best Director');
+insert into award values(1011, 'Best documentary feature');
+insert into award values(1012, 'Best documentary short');
+insert into award values(1013, 'Best film editing');
+insert into award values(1014, 'Best foreign language film');
+insert into award values(1015, 'Best makeup and hairstyling');
+insert into award values(1016, 'Best original score');
+insert into award values(1017, 'Best original song');
+insert into award values(1018, 'Best picture');
+insert into award values(1019, 'Best production design');
+insert into award values(1020, 'Best sound editing');
+insert into award values(1021, 'Best sound mixing');
+insert into award values(1022, 'Best visual effects');
+insert into award values(1023, 'Best adapted screeplay');
+insert into award values(1024, 'Best original screenplay');
 
 insert into videoawards values(000001, 1020, 1994, true);
 insert into videoawards values(000001, 1022, 1994, true);
@@ -684,7 +763,7 @@ insert into videoawards values(000005, 1004, 1998, false);
 
 insert into videoawards values(000006, 1022, 2013, false);
 
-insert into videoawards values(000006, 1022, 2013, false);
+insert into videoawards values(000007, 1022, 2013, false);
 
 insert into videoawards values(000009, 1017, 2013, false);
 
@@ -744,10 +823,10 @@ insert into videoawards values(000027, 1018, 1993, true);
 
 insert into videoawards values(000028, 1013, 1996, false);
 
-insert into videoawards values(000028, 1013, 1996, false);
-
 insert into videoawards values(000029, 1004, 1998, true);
 insert into videoawards values(000029, 1023, 1998, true);
 
 insert into videoawards values(000030, 1001, 2004, true);
 insert into videoawards values(000030, 1002, 2004, true);
+
+
