@@ -24,7 +24,7 @@ CREATE TABLE Card(
 
 CREATE TABLE BillingInformation (
 	MemberNumber INTEGER NOT NULL,
-	CardNumber BIGINTEGER,
+	CardNumber BIGINT,
 	Type VARCHAR,
 	PRIMARY KEY(MemberNumber),
 	FOREIGN KEY(CardNumber) REFERENCES Card
