@@ -35,11 +35,15 @@ WHERE V.VideoID = R.VideoID AND V.Genre = ANY (SELECT V2.Genre
 									FROM Video V3, Returns R3
 									WHERE V3.VideoID = R3.VideoID));
 
-SELECT M.Lastname, M.Firstname, M.email, COUNT(*)
-FROM Member M, Purchase P
-WHERE M.MemberNumber = P.MemberNumber
-GROUP BY M.Lastname, M.Firstname, M.email
-HAVING COUNT(*) >2;		(** NOT COMPLETED**)
+SELECT avg(Count), M2.Lastname, M2.Firstname, M2.email
+FROM (SELECT COUNT(*) AS Count
+	FROM Purchase P, Member M
+	WHERE P.MemberNumber = M.MemberNumber
+	GROUP BY M.MemberNumber) as Counts, Member M2, Purchase P2
+	WHERE M2.MemberNumber = P2.MemberNumber
+	GROUP BY M2.Lastname, M2.Firstname, M2.email
+	HAVING COUNT(*) > AVG(Count); (**NOT working properly, gonna work on it later**)
+	
 
 SELECT V.name
 FROM Video V, Purchase P
