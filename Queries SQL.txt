@@ -32,3 +32,9 @@ GROUP BY V.genre, V.name, V.salesprice
 HAVING Count(*) >= ALL (SELECT Count(*)
 			FROM Video V2, Returns R2
 			WHERE V2.VideoID = R2.VideoID); (** NOT COMPLETED**)
+
+SELECT M.Lastname, M.Firstname, M.email, COUNT(*)
+FROM Member M, Purchase P
+WHERE M.MemberNumber = P.MemberNumber
+GROUP BY M.Lastname, M.Firstname, M.email
+HAVING COUNT(*) >2;		(** NOT COMPLETED**)
