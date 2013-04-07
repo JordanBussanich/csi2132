@@ -41,10 +41,10 @@ if($submit)
 {
 	
 	// Attempt to connect
-	$connect = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
+	$dbconn = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
 	
 	// Make sure an the given email doesn't already have an account
-	$namecheck = pg_query("SELECT email FROM Member WHERE email='$email'"); 
+	$namecheck = pg_query($dbconn, "SELECT email FROM Member WHERE email='$email'"); 
 	$count = pg_num_rows($namecheck);
 	
 	// If taken, kill the page
@@ -71,24 +71,30 @@ if($submit)
 				//$password = md5($password);
 				//$repeat = md5($repeat);
 				
-				// Register the member and the card first (we need these to register the BillingInfo, BillingAddress and ShippingAddress)
-				$regmember = "INSERT INTO `Member` VALUES ('', '$firstname', '$lastname', '$email', '$password')";
-				$regcard = "INSERT INTO `Card` VALUES ('$cardnum', '$expdate', '$card')";
+				// Register the member
+				$regmember = "INSERT INTO Member VALUES (DEFAULT, '$firstname', '$lastname', '$email', '$password')";
+				pg_query($dbconn, $regmember) or die("Insertion failed");
 				
-				if(pg_query($regmember) && pg_query($regcard))
+				// Get the new member number
+				$query = "SELECT MemberNumber FROM Member WHERE email = '$email' AND password = '$password'";
+				$result = pg_query($dbconn, $query) or die("Query Failed");
+				$member = pg_fetch_row($result);
+				$memnum = intval($member[0]);
+				
+				// Register the billing information
+				$regbill = "INSERT INTO BillingInformation VALUES ('$memnum', '$cardnum', '$expdate', '$card')";
+				
+				// Register the billing/shipping addresses
+				$regbilladdr = "INSERT INTO BillingAddress VALUES ('$memnum', '$memnum', '$address', '', '$city', '$phone', '$postcode')";
+				$regshipaddr = "INSERT INTO ShippingAddress VALUES ('$memnum', '$memnum', '$saddress', '', '$scity', '$sphone', '$spostcode')";
+				
+				if(pg_query($dbconn, $regbill) && pg_query($dbconn, $regbilladdr) && pg_query($dbconn, $regshipaddr))
 				{
-					// Get the member number
-					$memnum = "SELECT m.MemberNumber FROM Member m WHERE m.email = '$email' AND m.password = '$password'";
-					
-					// Now register BillingInfo, BillingAddress and ShippingAddress
-					$regbillinfo = "INSERT INTO `BillingInformation` VALUES ('$memnum', '$cardnum', 'credit')";
-					$regbilladdr = "INSERT INTO `BillingAddress` VALUES ('', '$memnum', '$address', '', '$city', '$phone', '$postcode)";
-					$regshipaddr = "INSERT INTO `ShippingAddress` VALUES ('', '$memnum', '$saddress', '', '$scity', '$sphone', '$spostcode)";
-					
-					if(pg_query($regbillinfo) && pg_query($regbilladdr) && pg_query($regshipaddr))
-					{
-						die("Registration successful.<br/><a href= 'index.php'>Return to login page</a>");
-					}
+					die("Registration successful.<br/><a href= 'index.php'>Return to login page</a>");
+				}
+				else
+				{
+					die("Error: Registration failed for an unknown reason.");
 				}
 			}
 		}

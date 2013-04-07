@@ -19,6 +19,7 @@ CREATE TABLE Actor(
 CREATE TABLE BillingInformation (
 	MemberNumber INTEGER NOT NULL,
 	CardNumber BIGINT,
+	ExpDate VARCHAR,
 	Type VARCHAR,
 	PRIMARY KEY(MemberNumber));
 
