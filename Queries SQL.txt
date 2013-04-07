@@ -68,3 +68,11 @@ FROM Actor A, Download D, VideoStar VS, Video V
 WHERE A.ActorID = VS.ActorID AND V.VideoID = VS.VideoID AND D.VideoID = VS.VideoID AND D.VideoID >= ALL (SELECT D2.VideoID
 													FROM Download D2, Video V2, VideoStar VS2, Actor A2
 													WHERE A2.ActorID = VS2.ActorID AND V2.VideoID = VS2.VideoID AND D2.VideoID = VS2.VideoID);
+
+SELECT D.Lastname, D.Firstname, COUNT(*) as OscarNominations
+FROM VideoAwards VA, Award A, Video V, Director D
+WHERE D.DirectorID = V.DirectorID AND A.AwardID = VA.AwardID AND V.VideoID = VA.VideoID AND VA.won = false
+GROUP BY D.Lastname, D.Firstname
+HAVING COUNT(*) >= ALL (SELECT COUNT(*)
+			FROM VideoAwards VA2, Award A2, Video V2, Director D2
+			WHERE D2.DirectorID = V2.DirectorID AND A2.AwardID = VA2.AwardID AND V2.VideoID = VA2.VideoID AND VA2.won = false);
