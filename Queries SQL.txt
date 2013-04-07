@@ -46,8 +46,7 @@ GROUP BY V.name
 HAVING COUNT(*) >=ALL (SELECT COUNT(*)
 			FROM Purchase P2, Video V2
 			WHERE P2.VideoID = V2.VideoID)
-			UNION
-
+UNION
 SELECT V.name
 FROM Video V, Download D
 WHERE V.VideoID = D.VideoID
@@ -55,3 +54,11 @@ GROUP BY V.name
 HAVING COUNT(*) >=ALL (SELECT COUNT(*)
 			FROM Download D2, Video V2
 			WHERE D2.VideoID = V2.VideoID);
+
+SELECT V.name, V.salesprice
+FROM Video V, Download D
+WHERE V.VideoID = D.VideoID AND D.VideoID NOT IN (SELECT P2.VideoID
+						FROM Purchase P2, Video V2
+						WHERE V2.VideoID = P2.VideoID)
+						GROUP BY V.name, V.salesprice
+						HAVING COUNT(*) >4;
