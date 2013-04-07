@@ -76,3 +76,16 @@ GROUP BY D.Lastname, D.Firstname
 HAVING COUNT(*) >= ALL (SELECT COUNT(*)
 			FROM VideoAwards VA2, Award A2, Video V2, Director D2
 			WHERE D2.DirectorID = V2.DirectorID AND A2.AwardID = VA2.AwardID AND V2.VideoID = VA2.VideoID AND VA2.won = false);
+
+SELECT D.Lastname, D.Firstname, V.Name, COUNT(*) as OscarNominations
+FROM VideoAwards VA, Award A, Video V, Director D
+WHERE D.DirectorID = V.DirectorID AND A.AwardID = VA.AwardID AND V.VideoID = VA.VideoID AND VA.won = false
+GROUP BY D.Lastname, D.Firstname, V.name
+HAVING COUNT(*) >= ALL (SELECT COUNT(*)
+			FROM VideoAwards VA2, Award A2, Video V2, Director D2
+			WHERE D2.DirectorID = V2.DirectorID AND A2.AwardID = VA2.AwardID AND V2.VideoID = VA2.VideoID AND VA2.won = false
+			AND V2.VideoID NOT IN (SELECT V3.VideoID
+						FROM VideoAwards VA3, Award A3, Video V3, Director D3
+						WHERE D3.DirectorID = V3.DirectorID AND A3.AwardID = VA3.AwardID AND V3.VideoID = VA3.VideoID AND VA3.won = true));
+
+				
