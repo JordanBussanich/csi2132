@@ -10,8 +10,8 @@ ALTER SEQUENCE member_membernumber_seq RESTART WITH 10000;
 
 CREATE TABLE Actor(
 	ActorID INTEGER,
-	Firstname VARCHAR NOT NULL,
 	Lastname VARCHAR NOT NULL,
+	Firstname VARCHAR NOT NULL,
 	Date_of_birth DATE,
 	IMDB_link TEXT,
 	PRIMARY KEY (ActorID));	
@@ -50,8 +50,8 @@ CREATE TABLE ShippingAddress(
 
 CREATE TABLE Director(
 	DirectorID INTEGER,
-	Firstname VARCHAR,
 	Lastname VARCHAR,
+	Firstname VARCHAR,
 	Date_of_birth DATE,
 	PRIMARY KEY(DirectorID));
 

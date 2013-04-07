@@ -9,19 +9,19 @@ session_start();
 // Get the SQL server variables
 include ("config.php");
 
-// Connect to the SQL server
-$dbconn = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
-
 // Make sure we're signed in
 if($_SESSION['member'])
 {
 	// Display the header
 	include ("header.php");
 	
-	// For each video, add a row to the table
-	$videos = pg_query("SELECT VideoID, Name FROM Video ORDER BY Name");
+	// Connect to the SQL server
+	$dbconn = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
 	
-	if ($pg_num_rows($videos) == 0)
+	// For each video, add a row to the table
+	$result = pg_query($dbconn, "SELECT VideoID, Name FROM Video ORDER BY Name") or die("Query Failed");
+	
+	if (pg_num_rows($result) == 0)
 	{
 		echo("<br/><i>No videos</i>");
 	}
@@ -34,18 +34,18 @@ if($_SESSION['member'])
 			<th width="70%">Video Title</td>
 		</tr>
 		<?php
-		
-		while($videos_row = pg_fetch_assoc($videos))
+		for ($i = 0; $i < pg_num_rows($result); $i++)
 		{
 			// Get the video from the database
-			$videos_id = $videos_row['VideoID'];
-			$videos_name = $videos_row['Name'];
+			$video = pg_fetch_row($result, $i);
+			$videos_id = $video[0];
+			$videos_name = $video[1];
 			?>
 			<tr>
 				<?php
 				$url = "video.php?vid=".$videos_id;
-				echo('<td><a href="$url">$videos_id</a>');
-				echo('<td><i>$videos_name</i>');
+				echo('<td><a href="'.$url.'">'.$videos_id.'</a>');
+				echo('<td><i>'.$videos_name.'</i>');
 				?>
 			</tr>
 		<?php
