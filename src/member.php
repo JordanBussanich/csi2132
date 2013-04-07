@@ -13,7 +13,7 @@ include ("config.php");
 $connect = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
 
 // Make sure we're signed in
-if($_SESSION['memnum'])
+if($_SESSION['member'])
 {
 	// Display the header
 	include ("header.php");
