@@ -62,3 +62,9 @@ WHERE V.VideoID = D.VideoID AND D.VideoID NOT IN (SELECT P2.VideoID
 						WHERE V2.VideoID = P2.VideoID)
 						GROUP BY V.name, V.salesprice
 						HAVING COUNT(*) >4;
+
+SELECT A.Firstname, A.Lastname, A.Date_of_birth
+FROM Actor A, Download D, VideoStar VS, Video V
+WHERE A.ActorID = VS.ActorID AND V.VideoID = VS.VideoID AND D.VideoID = VS.VideoID AND D.VideoID >= ALL (SELECT D2.VideoID
+													FROM Download D2, Video V2, VideoStar VS2, Actor A2
+													WHERE A2.ActorID = VS2.ActorID AND V2.VideoID = VS2.VideoID AND D2.VideoID = VS2.VideoID);
