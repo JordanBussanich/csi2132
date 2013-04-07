@@ -48,7 +48,9 @@ if($_SESSION['memnum'])
 				echo('<td><i>$videos_name</i>');
 				?>
 			</tr>
+		<?php
 		}
+	}
 	?>
 	</table>
 	

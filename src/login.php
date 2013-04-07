@@ -22,9 +22,9 @@ if($email&&$password)
 
 	// Attempt to login
 	//$hashpass = md5($password);		// May need to change this to not use a hash
-	$query = "SELECT m.MemberNumber FROM Member m WHERE m.email = '$email' AND m.password = '$password'";
-	
+	$query = "SELECT MemberNumber FROM Member WHERE email = '$email' AND password = '$password'";
 	$result = pg_query($query);
+	echo $result;
 	
 	if (!$result)
 	{
