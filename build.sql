@@ -1,7 +1,7 @@
 ﻿CREATE TABLE Member (
 	MemberNumber SERIAL,
-	Lastname VARCHAR,
 	Firstname VARCHAR,
+	Lastname VARCHAR,
 	email VARCHAR,
 	password VARCHAR,
 	PRIMARY KEY(MemberNumber));
@@ -10,8 +10,8 @@ ALTER SEQUENCE member_membernumber_seq RESTART WITH 10000;
 
 CREATE TABLE Actor(
 	ActorID INTEGER,
-	Lastname VARCHAR NOT NULL,
 	Firstname VARCHAR NOT NULL,
+	Lastname VARCHAR NOT NULL,
 	Date_of_birth DATE,
 	IMDB_link TEXT,
 	PRIMARY KEY (ActorID));	
@@ -50,8 +50,8 @@ CREATE TABLE ShippingAddress(
 
 CREATE TABLE Director(
 	DirectorID INTEGER,
-	Lastname VARCHAR,
 	Firstname VARCHAR,
+	Lastname VARCHAR,
 	Date_of_birth DATE,
 	PRIMARY KEY(DirectorID));
 

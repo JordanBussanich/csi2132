@@ -10,7 +10,7 @@ session_start();
 include ("config.php");
 
 // Connect to the SQL server
-$connect = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
+$dbconn = pg_connect($connection) or die("Error: Could not connect to SQL server. Please contact <a href='mailto://jordan.bussanich@gmail.com'>Jordan Bussanich</a> to report this error.");
 
 // Make sure we're signed in
 if($_SESSION['member'])
