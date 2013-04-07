@@ -25,13 +25,15 @@ FROM Video V, Director D
 WHERE V.DirectorID = D.DirectorID AND V.Instock = true
 GROUP BY D.Lastname, D.Firstname;
 
-SELECT V.name, V.salesprice, Count(*)
+SELECT V.name, V.salesprice
 FROM Video V, Returns R
-WHERE V.VideoID = R.VideoID
-GROUP BY V.genre, V.name, V.salesprice
-HAVING Count(*) >= ALL (SELECT Count(*)
-			FROM Video V2, Returns R2
-			WHERE V2.VideoID = R2.VideoID); (** NOT COMPLETED**)
+WHERE V.VideoID = R.VideoID AND V.Genre = ANY (SELECT V2.Genre
+						FROM Video V2, Returns R2
+						WHERE V2.VideoID = R2.VideoID
+						GROUP BY V2.Genre
+						HAVING COUNT(*) >= ALL (SELECT COUNT(*)
+									FROM Video V3, Returns R3
+									WHERE V3.VideoID = R3.VideoID));
 
 SELECT M.Lastname, M.Firstname, M.email, COUNT(*)
 FROM Member M, Purchase P
