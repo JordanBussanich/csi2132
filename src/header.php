@@ -11,6 +11,6 @@ $member = $_SESSION['member'];
 $result = pg_query($dbconn, "SELECT Firstname, Lastname FROM Member WHERE MemberNumber = '$member'") or die("Query Failed.");
 $name = pg_fetch_row($result);
 pg_close($dbconn);
-echo "Welcome, ". $name[0]. " ".$name[1].". <br><a href='logout.php'>Logout</a>";
-echo "<hr>";
-?>
+echo "Welcome, ". $name[0]. " ".$name[1].". <br>";?>
+<a href='member.php'>Home</a>  <a href='stats.php'>Stats</a>  <a href='logout.php'>Logout</a>
+<hr>
