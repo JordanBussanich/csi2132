@@ -10,6 +10,25 @@ WHERE V.Genre = <JSP List here> AND V.VideoID = D.VideoID AND P.VideoID = V.Vide
 																					FROM Purchase P3, Video V3, Download D3
 SELECT S.address1, B.MemberNumber, B.CardNumber, B.Type
 FROM ShippingAddress S, Billinginformation B, Member M
-WHERE M.Membernumber = <JSP List here> AND  M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;	
+WHERE M.Membernumber = <JSP List here> AND  M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;
 
-SELECT 
+SELECT M.Lastname, M.FirstName, M.email
+FROM Member M, Download D, Video V
+WHERE M.MemberNumber = D.Membernumber AND V.Genre = <JSP CODE LIST> AND V.VideoID = D.VideoID
+GROUP BY M.Lastname, M.FirstName, M.email
+Having Count(*) >= ALL (SELECT Count(*)
+			FROM Member M2, Download D2, Video V2
+			WHERE M2.MemberNumber = D2.Membernumber AND V2.Genre = <JSP CODE LIST> AND V2.VideoID = D2.VideoID);
+
+SELECT D.Lastname, D.Firstname, COUNT(*)
+FROM Video V, Director D
+WHERE V.DirectorID = D.DirectorID AND V.Instock = true
+GROUP BY D.Lastname, D.Firstname;
+
+SELECT V.name, V.salesprice, Count(*)
+FROM Video V, Returns R
+WHERE V.VideoID = R.VideoID
+GROUP BY V.genre, V.name, V.salesprice
+HAVING Count(*) >= ALL (SELECT Count(*)
+			FROM Video V2, Returns R2
+			WHERE V2.VideoID = R2.VideoID); (** NOT COMPLETED**)
