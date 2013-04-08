@@ -12,5 +12,5 @@ $result = pg_query($dbconn, "SELECT Firstname, Lastname FROM Member WHERE Member
 $name = pg_fetch_row($result);
 pg_close($dbconn);
 echo "Welcome, ". $name[0]. " ".$name[1].". <br>";?>
-<a href='member.php'>Home</a>  <a href='stats.php'>Stats</a>  <a href='logout.php'>Logout</a>
+<a href='member.php'>Home</a>  <a href='logout.php'>Logout</a>
 <hr>
