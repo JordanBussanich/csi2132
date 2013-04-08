@@ -1,16 +1,16 @@
 SELECT V.VideoID, V.Name, V.Salesprice, V.Genre, V.Rating, V.InStock, V.Year, V.Duration
 FROM Director D, Video V
-WHERE D.DirectorID = V.DirectorID AND V.Name = <JSP Dropdown List here>;
+WHERE D.DirectorID = V.DirectorID;
 
 SELECT V.Genre, V.Name, D.Date, P.date_ordered
 FROM Video V, Download D, Purchase P
-WHERE V.Genre = <JSP List here> AND V.VideoID = D.VideoID AND P.VideoID = V.VideoID AND P.date_ordered > ALL (SELECT P2.Date_ordered
+WHERE V.VideoID = D.VideoID AND P.VideoID = V.VideoID AND P.date_ordered > ALL (SELECT P2.Date_ordered
   												FROM Purchase P2, Video V2, Download D2
 													WHERE P2.VideoID = V2.VideoID AND D2.VideoID = V2.VideoID AND P2.Date_ordered > ALL (SELECT D3.Date
 																					FROM Purchase P3, Video V3, Download D3
 SELECT S.address1, B.MemberNumber, B.CardNumber, B.Type
 FROM ShippingAddress S, Billinginformation B, Member M
-WHERE M.Membernumber = <JSP List here> AND  M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;
+WHERE M.MemberNumber = S.MemberNumber AND M.MemberNumber B.MemberNumber;
 
 SELECT M.Lastname, M.FirstName, M.email
 FROM Member M, Download D, Video V
@@ -18,7 +18,7 @@ WHERE M.MemberNumber = D.Membernumber AND V.Genre = <JSP CODE LIST> AND V.VideoI
 GROUP BY M.Lastname, M.FirstName, M.email
 Having Count(*) >= ALL (SELECT Count(*)
 			FROM Member M2, Download D2, Video V2
-			WHERE M2.MemberNumber = D2.Membernumber AND V2.Genre = <JSP CODE LIST> AND V2.VideoID = D2.VideoID);
+			WHERE M2.MemberNumber = D2.Membernumber AND V2.VideoID = D2.VideoID);
 
 SELECT D.Lastname, D.Firstname, COUNT(*)
 FROM Video V, Director D
@@ -42,7 +42,7 @@ FROM (SELECT COUNT(*) AS Count
 	GROUP BY M.MemberNumber) as Counts, Member M2, Purchase P2
 	WHERE M2.MemberNumber = P2.MemberNumber
 	GROUP BY M2.Lastname, M2.Firstname, M2.email
-	HAVING COUNT(*) > AVG(Count); (**NOT working properly, gonna work on it later**)
+	HAVING COUNT(*) > AVG(Count); 
 	
 
 SELECT V.name
